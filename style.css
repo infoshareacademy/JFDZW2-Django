@@ -500,6 +500,47 @@ fieldset {
 }
 
 /* Elements */
+body {
+  color: #000;
+  font-size: 16px;
+  font-family: "Opens Sans";
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 0.75rem;
+}
+
+h3 {
+  font-size: 0.5rem;
+}
+
+h4 {
+  font-size: 0.375rem;
+}
+
+h5 {
+  font-size: 0.3rem;
+}
+
+h6 {
+  font-size: 0.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #E23A59;
+  border-bottom: 3px solid #E23A59;
+}
+
 /* Ojects */
 .o-wrapper {
   margin: auto;
@@ -508,7 +549,6 @@ fieldset {
 
 .o-wrapper--full {
   width: 100%;
-  background-color: #FCC82B;
 }
 
 .o-flex {
@@ -555,16 +595,23 @@ fieldset {
   top: 0;
 }
 
+.c-header__item {
+  padding: 20px 0;
+}
+
+.c-header__link:hover {
+  text-decoration: none;
+  border: none;
+}
+
 .c-image__logo {
   width: 100px;
 }
 
 .c-image__caption {
   padding: 0 25px;
-}
-
-.c-nav__item {
-  padding: 20px;
+  font-size: 19px;
+  font-weight: 700;
 }
 
 .c-nav__list {
@@ -573,6 +620,7 @@ fieldset {
 
 .c-nav__link {
   text-decoration: none;
+  padding: 15px;
 }
 
 /* Utilities */

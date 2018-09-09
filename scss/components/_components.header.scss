@@ -6,8 +6,14 @@
         top: 0;
     }
     &__item{
+        padding: 20px 0;
         
-        
+    }
+    &__link{
+        &:hover{
+            text-decoration: none;
+            border: none;
+        }
     }
     
 }

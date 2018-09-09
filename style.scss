@@ -1,8 +1,11 @@
 /* Settings */
 @import "scss/settings/_settings.colors";
+@import "scss/settings/_settings.type";
+
+
 
 /* Tools */ 
-@import "scss/tools/tools.typography";
+
 
 
 /* Generic */
@@ -13,6 +16,7 @@
 
 /* Elements */
 @import "scss/elements/elements.typography";
+@import "scss/elements/elements.page";
 
 /* Ojects */
 
