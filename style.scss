@@ -1,6 +1,9 @@
 /* Settings */
 @import "scss/settings/_settings.colors";
 
+/* Tools */ 
+@import "scss/tools/tools.typography";
+
 
 /* Generic */
 
@@ -15,11 +18,16 @@
 
 @import "scss/objects/objects.layout";
 
+
+
 /* Components */
 
 @import "scss/components/components.header";
 @import "scss/components/components.navigation";
 @import "scss/components/components.footer";
+@import "scss/components/components.image";
+@import "scss/components/components.nav";
+
 
 
 /* Utilities */

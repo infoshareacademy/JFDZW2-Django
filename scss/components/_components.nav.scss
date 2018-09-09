@@ -1,0 +1,13 @@
+.c-nav{
+    
+    &__item{
+        padding: 20px;
+    }
+    &__list{
+        list-style-type: none;
+       
+    }
+    &__link{
+        text-decoration: none;
+    }
+}
