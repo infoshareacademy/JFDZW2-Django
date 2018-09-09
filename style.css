@@ -503,12 +503,11 @@ fieldset {
 /* Ojects */
 .o-wrapper {
   margin: auto;
-  max-width: 1200px;
+  width: 1200px;
 }
 
 .o-wrapper--full {
   width: 100%;
-  background-color: #FCC82B;
 }
 
 .o-flex {
@@ -520,7 +519,10 @@ fieldset {
           align-items: center;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
+  .o-wrapper {
+    width: 990px;
+  }
   .o-flex {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -542,17 +544,36 @@ fieldset {
   }
 }
 
+@media only screen and (max-width: 990px) {
+  .o-wrapper {
+    width: 768px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .o-wrapper {
+    width: 100%;
+  }
+}
+
 /* Components */
 .c-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 20px 0;
+  background-color: #FCC82B;
 }
 
 .c-header--sticky {
   position: fixed;
   top: 0;
+}
+
+.c-footer {
+  color: #44ADAD;
+  background-color: #3E506B;
+  padding: 1em;
 }
 
 .c-image__logo {
@@ -576,4 +597,7 @@ fieldset {
 }
 
 /* Utilities */
+body#dev * {
+  border: 1px dotted red;
+}
 /*# sourceMappingURL=style.css.map */

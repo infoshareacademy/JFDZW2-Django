@@ -1,6 +1,8 @@
 .c-header{
     justify-content: space-between;
     padding: 20px 0;
+    background-color: $color4;
+    
     &--sticky{
         position: fixed;
         top: 0;
