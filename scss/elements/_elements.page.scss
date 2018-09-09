@@ -1,0 +1,23 @@
+body {
+    color: $color6;
+    font-size: $font-size-base;
+    font-family: $font-open-sans;
+    font-weight: $font-weight-light;
+  }
+
+
+
+  @for $i from 1 to 7 {
+      h#{$i} {
+          font-size: 1.5/$i * 1rem;
+      }
+  }
+
+a{
+  text-decoration: none;
+  color: $color6;
+  &:hover{
+    color: $color1;
+    border-bottom: 3px solid $color1;
+  }
+}
