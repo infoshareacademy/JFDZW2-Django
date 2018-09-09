@@ -1,4 +1,5 @@
 /* Settings */
+/* Tools */
 /* Generic */
 /* ==========================================================================
    #BOX-SIZING
@@ -500,32 +501,79 @@ fieldset {
 
 /* Elements */
 /* Ojects */
-.o-grid__main {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-      grid-template-areas: "header"  "main" "footer";
+.o-wrapper {
+  margin: auto;
+  max-width: 1200px;
 }
 
-.o-header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: header;
+.o-wrapper--full {
+  width: 100%;
+  background-color: #FCC82B;
 }
 
-.o-main {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: main;
+.o-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.o-footer {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: footer;
+@media only screen and (max-width: 1000px) {
+  .o-flex {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .o-flex--small {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .o-flex__item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 /* Components */
+.c-header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
+}
+
+.c-header--sticky {
+  position: fixed;
+  top: 0;
+}
+
+.c-image__logo {
+  width: 100px;
+}
+
+.c-image__caption {
+  padding: 0 25px;
+}
+
+.c-nav__item {
+  padding: 20px;
+}
+
+.c-nav__list {
+  list-style-type: none;
+}
+
+.c-nav__link {
+  text-decoration: none;
+}
+
 /* Utilities */
 /*# sourceMappingURL=style.css.map */
