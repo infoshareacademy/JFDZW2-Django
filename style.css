@@ -578,8 +578,55 @@ fieldset {
 .c-box-hero {
   background: url("img/carl-nenzen.jpg") center center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.c-box-hero--slogan {
+  width: 450px;
+  height: auto;
+}
+
+.c-box-hero--slogan .c-box-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: block;
+  text-align: left;
+  margin-left: 1.5em;
+  color: #FCC82B;
+  font-size: 3em;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.c-box-hero--slogan .c-box-subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: block;
+  text-align: left;
+  margin-left: 1.5em;
+  color: #ffffff;
+  font-size: 2.5em;
+  padding: 5px;
 }
 
 /* Utilities */

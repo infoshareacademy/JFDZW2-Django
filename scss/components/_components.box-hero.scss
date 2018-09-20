@@ -1,7 +1,38 @@
 .c-box-hero {
     background: url('img/carl-nenzen.jpg') center center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
-
+    position: relative;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
+
+.c-box-hero--slogan{
+    width: 450px;
+    height: auto;
+   
+
+        .c-box-title{
+            @include mainSlogan;
+                color: $color4;
+                font-size: 3em;
+                font-weight:bold;
+                padding: 10px 0;
+            }
+
+        .c-box-subtitle{
+            @include mainSlogan;            
+                color: $color6;
+                font-size: 2.5em;
+                padding: 5px;
+               
+                
+            }
+        }
+
+
