@@ -1,0 +1,46 @@
+.c-button {
+    bottom: 45px;
+    right: 50px;
+    position: fixed;
+    
+}
+
+#c-button-top {
+    display: block;
+    margin-bottom: 7px;
+    float:right;
+    padding: 10px 10px;
+    background-color: $color4;
+    opacity: .6;
+    border-radius: 10px;
+    z-index:10000;
+    
+
+        &:hover{
+            border-color: $color4;
+            cursor: pointer;
+            opacity: 1;
+        }
+    
+}
+#c-button-image-small {
+    display: none;
+}
+
+@media only screen and (max-width: 640px) {
+    #c-button-image-small {
+        display: block;
+    }
+    #c-button-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #c-button-top {
+        display: none;
+    }
+}
+
+   
+

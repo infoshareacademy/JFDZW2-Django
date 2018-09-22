@@ -1,0 +1,9 @@
+//styling the main banner
+@mixin mainSlogan {
+    display: flex;
+    flex-wrap: wrap;
+    display: block;
+    text-align: left;
+    margin-left: 1.5em;
+    
+}

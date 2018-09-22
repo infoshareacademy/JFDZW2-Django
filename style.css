@@ -596,6 +596,102 @@ fieldset {
   text-decoration: none;
 }
 
+.c-box-hero {
+  background: url("img/carl-nenzen.jpg") center center;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.c-box-hero-slogan {
+  width: 450px;
+  height: auto;
+}
+
+.c-box-hero-slogan .c-box-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: block;
+  text-align: left;
+  margin-left: 1.5em;
+  color: #FCC82B;
+  font-size: 3em;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.c-box-hero-slogan .c-box-subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: block;
+  text-align: left;
+  margin-left: 1.5em;
+  color: #ffffff;
+  font-size: 2.5em;
+  padding: 5px;
+}
+
+.c-button {
+  bottom: 45px;
+  right: 50px;
+  position: fixed;
+}
+
+#c-button-top {
+  display: block;
+  margin-bottom: 7px;
+  float: right;
+  padding: 10px 10px;
+  background-color: #FCC82B;
+  opacity: .6;
+  border-radius: 10px;
+  z-index: 10000;
+}
+
+#c-button-top:hover {
+  border-color: #FCC82B;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#c-button-image-small {
+  display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  #c-button-image-small {
+    display: block;
+  }
+  #c-button-image {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #c-button-top {
+    display: none;
+  }
+}
+
 /* Utilities */
 body#dev * {
   border: 1px dotted red;
