@@ -4,7 +4,8 @@
     "sources": [
         "style.scss",
         "scss/settings/_settings.colors.scss",
-        "scss/tools/tools.typography.scss",
+        "scss/settings/_settings.media.scss",
+        "scss/tools/_tools.typography.scss",
         "scss/generic/_generic.box-sizing.scss",
         "scss/generic/_generic.normalize.scss",
         "scss/generic/_generic.reset.scss",

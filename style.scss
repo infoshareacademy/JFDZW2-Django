@@ -1,5 +1,6 @@
 /* Settings */
 @import "scss/settings/_settings.colors";
+@import "scss/settings/_settings.media";
 
 /* Tools */ 
 @import "scss/tools/tools.typography";
@@ -32,3 +33,5 @@
 
 
 /* Utilities */
+
+@import "scss/utilities/_tools.devutility.scss"
