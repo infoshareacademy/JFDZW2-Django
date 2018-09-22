@@ -36,18 +36,7 @@
         width: $media-md;
     }
 
-    .o-flex{
-        justify-content: center;
-
-        &--small{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        }
-        &__item{
-            flex-basis: 100%;
-        }
-    }
+   
 }
 
 @media only screen and (max-width: $media-md) {
@@ -60,4 +49,18 @@
     .o-wrapper{
         width: 100%;
     }
+
+    .o-flex{
+        justify-content: center;
+
+        &--small{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        }
+        &__item{
+            flex-basis: 100%;
+        }
+    }
+
 }
