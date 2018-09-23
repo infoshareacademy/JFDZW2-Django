@@ -17,48 +17,50 @@
 //     grid-area: footer;
 // }
 
-.o-wrapper{
+.o-wrapper {
     margin: auto;
     width: $media-xl;
-    &--full{
+
+    &--full {
         width: 100%;
     }
 }
 
-.o-flex{
+.o-flex {
     display: flex;
     align-items: center;
 }
 
 
 @media only screen and (max-width: $media-xl) {
-    .o-wrapper{
+    .o-wrapper {
         width: $media-md;
     }
 
-   
+
 }
 
 @media only screen and (max-width: $media-md) {
-    .o-wrapper{
+    .o-wrapper {
         width: $media-sm;
     }
 }
 
 @media only screen and (max-width: $media-sm) {
-    .o-wrapper{
+    .o-wrapper {
         width: 100%;
     }
 
-    .o-flex{
+    .o-flex {
         justify-content: center;
 
-        &--small{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        &--small {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
         }
-        &__item{
+
+        &__item {
             flex-basis: 100%;
         }
     }
