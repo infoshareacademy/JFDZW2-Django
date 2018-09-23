@@ -1,0 +1,23 @@
+.c-box {
+  display: flex;
+  margin: auto;
+
+  &__features {
+    list-style-type: none;
+    color: $color2;
+    font-weight: bold;
+    flex-wrap: wrap;
+    flex: 0 0 10%;
+  }
+
+  &--features {
+    font-size: 1em;
+    list-style-type: none;
+  }
+}
+
+.fas {
+  font-size: 5em;
+  color: $color4; //yellow
+  margin: auto;
+}

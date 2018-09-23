@@ -699,6 +699,35 @@ fieldset {
   }
 }
 
+.c-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+.c-box__features {
+  list-style-type: none;
+  color: #44ADAD;
+  font-weight: bold;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+}
+
+.c-box--features {
+  font-size: 1em;
+  list-style-type: none;
+}
+
+.fas {
+  font-size: 5em;
+  color: #FCC82B;
+  margin: auto;
+}
+
 /* Utilities */
 body#dev * {
   border: 1px dotted red;
