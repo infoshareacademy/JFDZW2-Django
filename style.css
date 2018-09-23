@@ -463,12 +463,23 @@ template {
  * A very simple reset that sits on top of Normalize.css.
  */
 body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+dd,
+ol,
+ul,
 figure,
 hr,
-fieldset, legend {
+fieldset,
+legend {
   margin: 0;
   padding: 0;
 }
@@ -579,7 +590,7 @@ fieldset {
 }
 
 .c-image__logo {
-  width: 150px;
+  width: 100px;
 }
 
 .c-image__caption {
