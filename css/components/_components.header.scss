@@ -1,0 +1,17 @@
+.c-header {
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 5px solid $color4;
+
+
+    &--sticky {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        background-color: $color7;
+
+    }
+
+    &__item {}
+
+}
