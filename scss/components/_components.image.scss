@@ -1,8 +1,10 @@
 .c-image{
     &__logo{
-    width: 100px;
+    width: 150px;
     }
     &__caption{
         padding: 0 25px;
+        color: $color1;
+        font-weight: bolder;
     }
 }

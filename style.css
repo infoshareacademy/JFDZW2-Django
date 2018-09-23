@@ -579,15 +579,21 @@ fieldset {
 }
 
 .c-image__logo {
-  width: 100px;
+  width: 150px;
 }
 
 .c-image__caption {
   padding: 0 25px;
+  color: #E23A59;
+  font-weight: bolder;
 }
 
 .c-nav {
   padding: 20px 0 10px 0;
+}
+
+.c-nav__item {
+  margin: 5px;
 }
 
 .c-nav__list {
@@ -596,11 +602,14 @@ fieldset {
 
 .c-nav__link {
   text-decoration: none;
-  padding: 20px 20px 10px 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #E23A59;
 }
 
 .c-nav__link:hover {
-  border-bottom: 5px solid #E23A59;
+  background-color: #E23A59;
+  color: #FCC82B;
 }
 
 .c-box-hero {
