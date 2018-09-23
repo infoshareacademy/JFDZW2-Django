@@ -1,7 +1,7 @@
 .c-nav{
-    
+    padding: 20px 0 10px 0;
     &__item{
-        padding: 20px;
+        
     }
     &__list{
         list-style-type: none;
@@ -9,5 +9,10 @@
     }
     &__link{
         text-decoration: none;
+        padding: 20px 20px 10px 20px;
+        
     }
+}
+.c-nav__link:hover{
+        border-bottom: 5px solid $color1;
 }
