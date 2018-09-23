@@ -1,0 +1,12 @@
+a {
+    color: $color1;
+}
+
+.c-nav {
+    &__link {
+        font-size: 19px;
+        &:hover{
+            color: $color6;
+        }
+    }
+}
