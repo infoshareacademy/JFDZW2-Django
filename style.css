@@ -710,7 +710,6 @@ fieldset {
   }
 }
 
-<<<<<<< HEAD
 .c-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -754,7 +753,7 @@ fieldset {
 
 .flip-container, .front, .back {
   width: 320px;
-  height: 480px;
+  height: 320px;
 }
 
 /* flip speed goes here */
@@ -789,7 +788,8 @@ fieldset {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   background: blue;
-=======
+}
+
 .o-cookie-info {
   border: 1px solid #3E506B;
   border-radius: 20px;
@@ -817,7 +817,6 @@ button.o-cookie-hide {
 
 .o-cookie-info--hidden {
   display: none;
->>>>>>> master
 }
 
 /* Utilities */
