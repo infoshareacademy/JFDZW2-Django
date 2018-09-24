@@ -9,9 +9,9 @@ for (let i = 0; i < element.length; i++) {
 function smoothScroll (scrolId){
     let scrollIdElem = document.querySelector(scrolId);
     if(scrollIdElem != null){
-    scrollIdElem.scrollIntoView({ 
-        behavior: 'smooth' 
-      });
+        scrollIdElem.scrollIntoView({ 
+            behavior: 'smooth'
+        });
     } else {
         // debug
         console.log(`Impossibru to scroll! Target does not exist! Pls attach ${scrolId} to target section.`);  
