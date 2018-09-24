@@ -14,12 +14,12 @@ function stickyNav() {
     if (window.pageYOffset > offset) {
         nav.classList.add('c-header--sticky');
         main.style.marginTop = navHeight + 'px';
-        cHead.style.padding = '0 20px';
+        cHead.style.padding = '0 10px';
         
     } else {
         nav.classList.remove('c-header--sticky');
         main.style.marginTop = 0;
-        cHead.style.padding = '20px';
+        cHead.style.padding = '10px';
     }
 }
 
