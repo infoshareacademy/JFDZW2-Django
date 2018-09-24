@@ -1,6 +1,6 @@
 /* Settings */
-@import "settings/_settings.colors";
-@import "settings/_settings.media";
+@import "settings/settings.colors";
+@import "settings/settings.media";
 
 /* Tools */ 
 @import "tools/tools.typography";
@@ -30,6 +30,9 @@
 @import "components/components.nav";
 @import "components/components.box-hero";
 @import "components/components.box-button";
+@import "components/components.cookie";
+@import "components/components.box-features";
+
 
 
 /* Utilities */

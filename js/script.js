@@ -22,3 +22,15 @@ function stickyNav() {
         cHead.style.padding = '20px';
     }
 }
+
+var cookieHideBtn = document.querySelector('.o-cookie-hide');
+
+var onCookieCLickHandler = function () {
+    console.log('hi!');
+    var cookieBox = document.querySelector('.o-cookie-info');
+    cookieBox.classList.add('o-cookie-info--hidden');
+
+    // @TODO use local storage to save if cookie box is hidden (or not)
+}
+
+cookieHideBtn.addEventListener( 'click', onCookieCLickHandler)
