@@ -602,25 +602,31 @@ a {
 }
 
 .c-image__logo {
-  width: 170px;
+  width: 150px;
 }
 
 .c-image__caption {
   padding: 0 25px;
   color: #E23A59;
   font-weight: lighter;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 @media only screen and (max-width: 990px) {
   .c-image__logo {
-    width: 80px;
+    width: 70px;
+  }
+  .c-image__caption {
+    font-size: 20px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c-image__logo {
-    width: 170px;
+    width: 130px;
+  }
+  .c-image__caption {
+    font-size: 30px;
   }
 }
 
@@ -645,6 +651,12 @@ a {
 
 .c-nav__link:hover {
   background-color: #E23A59;
+}
+
+@media only screen and (max-width: 768px) {
+  .c-nav {
+    padding: 15px 0 20px 0;
+  }
 }
 
 .c-box-hero {
