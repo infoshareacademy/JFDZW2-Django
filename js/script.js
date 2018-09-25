@@ -1,59 +1,54 @@
 // SMOOTH SCROLL
-var element = document.getElementsByClassName('js-smooth');
-
+const element = document.getElementsByClassName('js-smooth');
 
 for (let i = 0; i < element.length; i++) {
     addListener(element[i]);
 }
 
-function smoothScroll (scrolId){
+function smoothScroll(scrolId) {
     let scrollIdElem = document.querySelector(scrolId);
-    if(scrollIdElem != null){
-        scrollIdElem.scrollIntoView({ 
-            behavior: 'smooth'
+    if (scrollIdElem != null) {
+        scrollIdElem.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'start'
         });
     } else {
         // debug
-        console.log(`Impossibru to scroll! Target does not exist! Pls attach ${scrolId} to target section.`);  
-    } 
+        console.log(`Impossibru to scroll! Target does not exist! Pls attach ${scrolId} to target section.`);
+    }
 }
 
 function addListener(elem) {
-    elem.addEventListener("click", function (event) {
-        event.preventDefault()
-    });
-    elem.addEventListener('click', function () {
-        smoothScroll(this.dataset.slide);
+    elem.addEventListener('click', function (event) {
+    event.preventDefault();
+    smoothScroll(this.dataset.slide);
     });
 }
 
 
-
-
-
 // STICKY NAV
-
 window.onscroll = function () {
     stickyNav()
 };
 
-var nav = document.querySelector('.js-sticky');
-var main = document.querySelector('.js-main');
-var cHead = document.querySelector('.js-head');
-var offset = nav.offsetTop;
+const nav = document.querySelector('.js-sticky');
+const main = document.querySelector('.js-main');
+const cHead = document.querySelector('.js-head');
+const offset = nav.offsetTop;
 
 function stickyNav() {
-    var navHeight = nav.clientHeight;
+    let navHeight = nav.clientHeight;
 
     if (window.pageYOffset > offset) {
         nav.classList.add('c-header--sticky');
+        cHead.classList.add('c-header--no-padding');
         main.style.marginTop = navHeight + 'px';
-        cHead.style.padding = '0 10px';
 
     } else {
         nav.classList.remove('c-header--sticky');
+        cHead.classList.remove('c-header--no-padding');
         main.style.marginTop = 0;
-        cHead.style.padding = '10px';
     }
 }
 

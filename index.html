@@ -14,10 +14,11 @@
 </head>
 
 <body>
-    <div id="js-sticky" class="o-wrapper--full js-sticky">
+    <div id="top"></div>
+    <div class="o-wrapper--full js-sticky">
         <header class="js-head c-header o-header o-wrapper o-flex o-flex--small">
             <figure class="c-header__item o-flex o-flex__item">
-                <a href="#"><img class="js-logo c-image__logo" src="img/logo.png" alt=""></a>
+                <a data-slide="#top" class="js-smooth" href="#"><img class="js-logo c-image__logo" src="img/logo.png" alt=""></a>
                 <figcaption class="c-image__caption">Pokonaj<br>Trasę</figcaption>
             </figure>
             <nav class="c-nav o-flex o-flex__item">
@@ -42,9 +43,9 @@
 
                 <ul class="c-box c-box__features o-flex">
                     <i class="fas fa-map-marked-alt"></i>
-                    <li class="c-box c-box__features ">Mapa obiektów niedaleko Ciebie</li>
+                    <li class="c-box c-box__features">Mapa obiektów niedaleko Ciebie</li>
                     <i class="fas fa-stopwatch"></i>
-                    <li class="c-box c-box__features ">Szczegółowe informacje o porządanym przez Ciebie miejscu</li>
+                    <li class="c-box c-box__features">Szczegółowe informacje o porządanym przez Ciebie miejscu</li>
                     <i class="fas fa-trophy"></i>
                     <li class="c-box c-box__features ">Znajdź z nami swojego trenera</li>
                     <i class="fas fa-globe-asia"></i>
@@ -67,7 +68,7 @@
 
         </section>
     </main>
-    <div class="c-button o-button">
+    <div data-slide="#top" class="c-button o-button js-smooth">
         <div id="c-button-top">
             <div id="c-button-image"><a href="#top"><img src="img/toparrow.png" alt="back to the top"></a></div>
             <div id="c-button-image-small"><a href="#top"><img src="img/toparrowsmall.png" alt="back to the top"></a></div>
