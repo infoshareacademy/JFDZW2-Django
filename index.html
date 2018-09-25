@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <title>Pokonaj trasę</title>
 </head>
 
 <body>
     <div id="js-sticky" class="o-wrapper--full js-sticky">
-        <header class="js-head c-header o-header o-flex o-flex--small">
+        <header class="js-head c-header o-header o-wrapper o-flex o-flex--small">
             <figure class="c-header__item o-flex o-flex__item">
-                <a href="#"><img class="js-logo c-image__logo" src="img/logo_color.png" alt=""></a>
+                <a href="#"><img class="js-logo c-image__logo" src="img/logo.png" alt=""></a>
                 <figcaption class="c-image__caption">Pokonaj<br>Trasę</figcaption>
             </figure>
             <nav class="c-nav o-flex o-flex__item">
@@ -31,8 +33,7 @@
         <section class="o-wrapper--full c-box c-box-hero ">
             <div class="c-box-hero-slogan">
                 <span class="c-box-title c-box">Main Slogan</span>
-                <span class="c-box-subtitle c-box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa odio
-                    quia
+                <span class="c-box-subtitle c-box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa odio quia
                     recusandae corporis</span>
             </div>
         </section>
@@ -53,22 +54,17 @@
         </section>
 
         <section class="o-wrapper--full c-box c-box-img-secondary">
-            <div class="c-box__row">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit id amet in!
-                Sapiente
-                corrupti expedita qui, veritatis quidem possimus voluptas. Nisi quasi voluptate vero necessitatibus
-                libero
-                aliquid pariatur aperiam.</div>
+            <img class="c-box-img-secondary__picture" src="img/mapa.jpg" alt="">
         </section>
         <section id="newsletter" class="o-wrapper c-box c-box-newsletter">
             <div class="c-box__row">
                 <h2>Tu będzie zapis na newsletter</h2>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa odio quia recusandae corporis, fuga
-                libero ullam non tempore
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa odio quia recusandae corporis, fuga libero ullam non tempore
                 quisquam qui.
             </div>
         </section>
         <section class="o-wrapper c-box c-box-team">
-            
+
         </section>
     </main>
     <div class="c-button o-button">
@@ -79,11 +75,30 @@
     </div>
     <footer class="o-wrapper--full c-footer">
         <div class="o-cookie-info">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, velit nostrum ratione id odio assumenda provident architecto, nihil unde, maiores atque dolorum. Voluptatibus officia tempora commodi quo consectetur, veniam soluta.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, velit nostrum ratione id odio assumenda
+                provident architecto, nihil unde, maiores atque dolorum. Voluptatibus officia tempora commodi quo consectetur,
+                veniam soluta.</p>
             <button href="#" class="o-cookie-hide">Zamknij</button>
         </div>
         <div class="o-wrapper">
-            &copy; 2018 django Team
+            <p>&copy; 2018 django Team</p>
+            <p class="c-footer__social o-flex">
+                <a class="o-flex__item" href="#">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a class="o-flex__item" href="#">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a class="o-flex__item" href="#">
+                    <i class="fab fa-youtube fa-2x"></i>
+                </a>
+                <a class="o-flex__item" href="#">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a class="o-flex__item" href="#">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+            </p>
         </div>
     </footer>
     <script src="js/script.js"></script>

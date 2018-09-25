@@ -2,4 +2,16 @@
     color: $color2;
     background-color: $color3;
     padding: 1em;
+    text-align: center;
+    min-height: 25vh;
+}
+.c-footer__social{
+    padding: 1em;
+    justify-content: center;
+    align-content: space-between;
+
+    & .o-flex__item{
+        color: $color2;
+        flex: 0 0 7%;
+    }
 }

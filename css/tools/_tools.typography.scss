@@ -1,3 +1,10 @@
+html{
+    font-size: 16px;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+
 //styling the main banner
 @mixin mainSlogan {
     display: flex;

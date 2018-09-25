@@ -1,13 +1,14 @@
 .c-image {
     &__logo {
-        width: 140px;
+        
     }
 
     &__caption {
         padding: 0 25px;
         color: $color1;
         font-weight: lighter;
-        font-size: 40px;
+        font-size: 1.5rem;
+        font-weight:700;
     }
 }
 
@@ -15,7 +16,7 @@
 @media only screen and (max-width: $media-md) {
     .c-image {
         &__logo {
-            width: 90px;
+           
         }
         &__caption {
             font-size: 20px;
@@ -25,7 +26,7 @@
 @media only screen and (max-width: $media-sm) {
     .c-image {
         &__logo {
-            width: 130px;
+            
         }
         &__caption {
             font-size: 30px;
