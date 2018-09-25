@@ -1,8 +1,9 @@
 // SMOOTH SCROLL
-const element = document.getElementsByClassName('js-smooth');
+const classJsSmooth = document.getElementsByClassName('js-smooth');
 
-for (let i = 0; i < element.length; i++) {
-    addListener(element[i]);
+
+for (let i = 0; i < classJsSmooth.length; i++) {
+    addListener(classJsSmooth[i]);
 }
 
 function smoothScroll(scrolId) {
@@ -21,30 +22,57 @@ function smoothScroll(scrolId) {
 
 function addListener(elem) {
     elem.addEventListener('click', function (event) {
-    event.preventDefault();
-    smoothScroll(this.dataset.slide);
+        event.preventDefault();
+        smoothScroll(this.dataset.slide);
     });
 }
 
+// STICKY NAV, MENU HIGHLIGHT
+const classJsNav = document.getElementsByClassName('js-nav');
 
-// STICKY NAV
 window.onscroll = function () {
-    stickyNav()
+    let navHeight = nav.clientHeight;
+    let offset = window.pageYOffset;
+    stickyNav(navHeight, offset);
+    menuHighlight(navHeight, offset);
 };
+
+function menuHighlight(navHeight, offset) {
+    let product = document.querySelector('#product');
+    let newsletter = document.querySelector('#newsletter');
+    let team = document.querySelector('#team');
+    //TODO: refactor this ugly part
+    if (offset + navHeight >= product.offsetTop && offset + navHeight < newsletter.offsetTop) {
+        classJsNav[0].classList.add('c-nav__link--active');
+        classJsNav[1].classList.remove('c-nav__link--active');
+        classJsNav[2].classList.remove('c-nav__link--active');
+    } else if (offset + navHeight >= newsletter.offsetTop && offset + navHeight < team.offsetTop) {
+        classJsNav[1].classList.add('c-nav__link--active');
+        classJsNav[0].classList.remove('c-nav__link--active');
+        classJsNav[2].classList.remove('c-nav__link--active');
+    } else if (offset + navHeight >= team.offsetTop) {
+        classJsNav[2].classList.add('c-nav__link--active');
+        classJsNav[0].classList.remove('c-nav__link--active');
+        classJsNav[1].classList.remove('c-nav__link--active');
+    } else {
+        classJsNav[0].classList.remove('c-nav__link--active');
+        classJsNav[1].classList.remove('c-nav__link--active');
+        classJsNav[2].classList.remove('c-nav__link--active');
+    }
+}
 
 const nav = document.querySelector('.js-sticky');
 const main = document.querySelector('.js-main');
 const cHead = document.querySelector('.js-head');
-const offset = nav.offsetTop;
+const navOffset = nav.offsetTop;
 
-function stickyNav() {
-    let navHeight = nav.clientHeight;
+function stickyNav(navHeight, offset) {
 
-    if (window.pageYOffset > offset) {
+
+    if (offset > navOffset) {
         nav.classList.add('c-header--sticky');
         cHead.classList.add('c-header--no-padding');
         main.style.marginTop = navHeight + 'px';
-
     } else {
         nav.classList.remove('c-header--sticky');
         cHead.classList.remove('c-header--no-padding');
