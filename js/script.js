@@ -1,11 +1,46 @@
+// SMOOTH SCROLL
+var element = document.getElementsByClassName('js-smooth');
+
+
+for (let i = 0; i < element.length; i++) {
+    addListener(element[i]);
+}
+
+function smoothScroll (scrolId){
+    let scrollIdElem = document.querySelector(scrolId);
+    if(scrollIdElem != null){
+        scrollIdElem.scrollIntoView({ 
+            behavior: 'smooth'
+        });
+    } else {
+        // debug
+        console.log(`Impossibru to scroll! Target does not exist! Pls attach ${scrolId} to target section.`);  
+    } 
+}
+
+function addListener(elem) {
+    elem.addEventListener("click", function (event) {
+        event.preventDefault()
+    });
+    elem.addEventListener('click', function () {
+        smoothScroll(this.dataset.slide);
+    });
+}
+
+
+
+
+
+// STICKY NAV
+
 window.onscroll = function () {
     stickyNav()
 };
 
 var nav = document.querySelector('.js-sticky');
 var main = document.querySelector('.js-main');
+var cHead = document.querySelector('.js-head');
 var offset = nav.offsetTop;
-
 
 function stickyNav() {
     var navHeight = nav.clientHeight;
@@ -13,12 +48,16 @@ function stickyNav() {
     if (window.pageYOffset > offset) {
         nav.classList.add('c-header--sticky');
         main.style.marginTop = navHeight + 'px';
+        cHead.style.padding = '0 10px';
 
     } else {
         nav.classList.remove('c-header--sticky');
         main.style.marginTop = 0;
+        cHead.style.padding = '10px';
     }
 }
+
+// COOKIES
 
 var cookieHideBtn = document.querySelector('.o-cookie-hide');
 
@@ -30,4 +69,4 @@ var onCookieCLickHandler = function () {
     // @TODO use local storage to save if cookie box is hidden (or not)
 }
 
-cookieHideBtn.addEventListener( 'click', onCookieCLickHandler)
+cookieHideBtn.addEventListener('click', onCookieCLickHandler)

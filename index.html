@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Pokonaj trasę</title>
@@ -12,17 +13,16 @@
 
 <body>
     <div id="js-sticky" class="o-wrapper--full js-sticky">
-        <header class="c-header o-header o-flex o-flex--small">
+        <header class="js-head c-header o-header o-flex o-flex--small">
             <figure class="c-header__item o-flex o-flex__item">
-                <a href="#"><img class="c-image__logo" src="img/logo_color.png" alt=""></a>
-                <figcaption class="c-image__caption">Pokonaj Trasę</figcaption>
+                <a href="#"><img class="js-logo c-image__logo" src="img/logo_color.png" alt=""></a>
+                <figcaption class="c-image__caption">Pokonaj<br>Trasę</figcaption>
             </figure>
             <nav class="c-nav o-flex o-flex__item">
-                <ul class="c-header__item c-nav__list nav-main o-flex ">
-                    <li class="c-nav__item"><a href="#" class="c-nav__link">Home</a></li>
-                    <li class="c-nav__item"><a href="#" class="c-nav__link">Info</a></li>
-                    <li class="c-nav__item"><a href="#" class="c-nav__link">O nas</a></li>
-                    <li class="c-nav__item"><a href="#" class="c-nav__link">Kontakt</a></li>
+                <ul class="c-header__item c-nav__list nav-main o-flex">
+                    <li data-slide="#product" class="js-smooth c-nav__item"><a href="" class="c-nav__link">Jak to działa</a></li>
+                    <li data-slide="#newsletter" class="js-smooth c-nav__item"><a href="#newsletter" class="c-nav__link">Newsletter</a></li>
+                    <li data-slide="#team" class="js-smooth c-nav__item"><a href="#team" class="c-nav__link">Nasz zespół</a></li>
                 </ul>
             </nav>
         </header>
@@ -36,7 +36,7 @@
                     recusandae corporis</span>
             </div>
         </section>
-        <section class="o-wrapper c-box c-box-features">
+        <section id="product" class="o-wrapper c-box c-box-features">
             <div class="c-box__row">
 
                 <ul class="c-box c-box__features o-flex">
@@ -59,7 +59,7 @@
                 libero
                 aliquid pariatur aperiam.</div>
         </section>
-        <section class="o-wrapper c-box c-box-newsletter">
+        <section id="newsletter" class="o-wrapper c-box c-box-newsletter">
             <div class="c-box__row">
                 <h2>Tu będzie zapis na newsletter</h2>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa odio quia recusandae corporis, fuga
