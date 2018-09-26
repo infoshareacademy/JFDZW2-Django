@@ -15,6 +15,7 @@
     justify-content: center;
     align-content: stretch;
  }
+ 
  .c-box-additional-features__line {
      display: flex;
      justify-items: center;
@@ -22,14 +23,13 @@
      padding: 12px 0;
      text-align: justify;
      
-         & .pe{
+         & .c-feature-h4{
              padding: 5px 0;
              justify-content: center;
 
             }
 
                }
-        }
     
         .c-feature-image {
             padding-right: 10px;
