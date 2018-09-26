@@ -1,6 +1,6 @@
 .c-image {
     &__logo {
-        
+       max-width: 110px; 
     }
 
     &__caption {
@@ -16,17 +16,18 @@
 @media only screen and (max-width: $media-md) {
     .c-image {
         &__logo {
-           
+            max-width: 80px; 
         }
         &__caption {
             font-size: 20px;
         }
     }
 }
+
 @media only screen and (max-width: $media-sm) {
     .c-image {
         &__logo {
-            
+            max-width: 120px; 
         }
         &__caption {
             font-size: 30px;

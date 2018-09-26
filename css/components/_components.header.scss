@@ -1,15 +1,17 @@
 .c-header {
     justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid $color1;
-
-
+    padding: 10px 0;
+    
+    
     &--sticky {
         position: fixed;
         top: 0;
         z-index: 999;
         background-color: $color6;
-
+        border-bottom: 1px solid $color1;
+    }
+    &--no-padding{
+        padding:0!important;
     }
 
     &__item {}
