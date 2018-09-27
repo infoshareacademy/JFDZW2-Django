@@ -8,11 +8,21 @@
     font-weight: bold;
     flex-wrap: wrap;
     flex: 0 0 10%;
+    padding: 1em;
   }
 
   &--features {
     font-size: 1em;
     list-style-type: none;
+  }
+  &__team {
+    flex: 5 200px;
+    display: flex;
+    flex-flow: column;
+    padding: 1em;
+  }
+  &__info{
+    display: flex;
   }
 }
 
@@ -22,3 +32,7 @@
   margin: auto;
 }
 
+#team{
+    display: flex;
+    flex-direction: row;
+  }
