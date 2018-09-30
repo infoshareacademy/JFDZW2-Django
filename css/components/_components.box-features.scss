@@ -35,10 +35,15 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  &__text{
+    margin: auto;
+    padding: 10px;
+  }
 }
 
+
 .fas {
-  font-size: 3em;
+  font-size: 6em;
   color: $color4; //yellow
   margin: auto;
 }
@@ -60,8 +65,9 @@
     }
     &-features {
       flex-basis: 50%;
-
-
+    }
+    .fas {
+      font-size: 4em;
     }
   }
 }
@@ -72,14 +78,12 @@
 
     &__team {
       flex-basis: 100%;
-
     }
-
     &-features {
       flex-basis: 100%;
-      
-
-
+    }
+    .fas {
+      font-size: 2em;
     }
   }
 }
