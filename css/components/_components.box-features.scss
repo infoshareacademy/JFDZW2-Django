@@ -1,5 +1,4 @@
 .c-box {
-  display: flex;
   margin: auto;
 
   &__features {
@@ -7,13 +6,15 @@
     color: $color2;
     font-weight: bold;
     flex-wrap: wrap;
-    flex: 0 0 10%;
-    padding: 1em;
+    justify-content: space-between;
   }
 
-  &--features {
+  &--feature {
     font-size: 1em;
     list-style-type: none;
+    text-align: center;
+    flex: 0 1 23%;
+    padding: 2rem 0;
   }
   &__team {
     flex: 5 200px;
@@ -27,12 +28,30 @@
 }
 
 .fas {
-  font-size: 5em;
+  font-size: 6em;
   color: $color4; //yellow
   margin: auto;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 #team{
     display: flex;
     flex-direction: row;
   }
+
+@media (max-width: $media-md){
+  .c-box {
+    &--feature {
+      flex: 0 1 46%;
+    }
+  }
+}
+
+@media (max-width: $media-sm){
+  .c-box {
+    &--feature {
+      flex: 0 1 100%;
+    }
+  }
+}
