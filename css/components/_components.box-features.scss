@@ -9,16 +9,23 @@
     flex-wrap: wrap;
     padding: 1em;
     margin: auto;
+    align-items: baseline; 
   }
 
-  &--features {
+  &-feature {
     font-size: 1em;
-    flex-basis: 25%;
+    flex: 0 1 25%;
+    //display: flex;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__features {
+   
     display: flex;
     align-items: center;
     padding: 10px;
-
-
   }
 
   &__team {
@@ -47,7 +54,9 @@
   color: $color4; //yellow
   margin: auto;
   width: 100%;
+  display: inline-block;
   margin-bottom: 2rem;
+  
 }
 
 #team {
@@ -66,12 +75,12 @@
       flex-basis: 20%;
     }
 
-    &-features {
-      flex-basis: 50%;
+    &-feature {
+      flex: 0 1 50%;
     }
 
     .fas {
-      font-size: 4em;
+     // font-size: 4em;
     }
   }
 }
@@ -84,27 +93,12 @@
       flex-basis: 100%;
     }
 
-    &-features {
-      flex-basis: 100%;
+    &-feature {
+      flex: 0 1 100%;
     }
 
     .fas {
-      font-size: 2em;
+      //font-size: 2em;
     }
   }
-
-  @media (max-width: $media-md) {
-    .c-box {
-      &--feature {
-        flex: 0 1 46%;
-      }
-    }
-  }
-
-  @media (max-width: $media-sm) {
-    .c-box {
-      &--feature {
-        flex: 0 1 100%;
-      }
-    }
-  }
+}
