@@ -82,14 +82,18 @@ function stickyNav(navHeight, offset) {
 
 // COOKIES
 
-var cookieHideBtn = document.querySelector('.o-cookie-hide');
 
-var onCookieCLickHandler = function () {
-    console.log('hi!');
+if (localStorage.getItem('state') === null){
+    localStorage.setItem('state', 'on');
+} else if(localStorage.getItem('state') === 'off'){
     var cookieBox = document.querySelector('.o-cookie-info');
     cookieBox.classList.add('o-cookie-info--hidden');
-
-    // @TODO use local storage to save if cookie box is hidden (or not)
 }
 
-cookieHideBtn.addEventListener('click', onCookieCLickHandler)
+function cookieOff(){
+    if (localStorage.getItem('state') === 'on'){
+            localStorage.setItem('state', 'off');
+            var cookieBox = document.querySelector('.o-cookie-info');
+                cookieBox.classList.add('o-cookie-info--hidden');
+        }
+    }

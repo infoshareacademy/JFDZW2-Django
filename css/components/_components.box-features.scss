@@ -1,5 +1,4 @@
 .c-box {
-  display: flex;
   margin: auto;
 
 
@@ -12,7 +11,7 @@
     margin: auto;
   }
 
-  &-features {
+  &--features {
     font-size: 1em;
     flex-basis: 25%;
     display: flex;
@@ -35,7 +34,8 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  &__text{
+
+  &__text {
     margin: auto;
     padding: 10px;
   }
@@ -46,6 +46,8 @@
   font-size: 6em;
   color: $color4; //yellow
   margin: auto;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 #team {
@@ -63,9 +65,11 @@
     &__team {
       flex-basis: 20%;
     }
+
     &-features {
       flex-basis: 50%;
     }
+
     .fas {
       font-size: 4em;
     }
@@ -79,11 +83,28 @@
     &__team {
       flex-basis: 100%;
     }
+
     &-features {
       flex-basis: 100%;
     }
+
     .fas {
       font-size: 2em;
     }
   }
-}
+
+  @media (max-width: $media-md) {
+    .c-box {
+      &--feature {
+        flex: 0 1 46%;
+      }
+    }
+  }
+
+  @media (max-width: $media-sm) {
+    .c-box {
+      &--feature {
+        flex: 0 1 100%;
+      }
+    }
+  }
