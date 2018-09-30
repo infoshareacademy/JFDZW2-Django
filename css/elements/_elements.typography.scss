@@ -18,3 +18,14 @@ a {
         }
     }
 }
+
+.c-section{
+    &__heading{
+        font-size:3em;
+        font-weight: bolder;
+        color: $color1;
+    }
+    &__newsletter{
+        color: $color6;
+    }
+}
