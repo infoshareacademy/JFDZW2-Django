@@ -1,10 +1,19 @@
-.c-section{
-    padding:120px 0;
-    &__heading{
-        padding: 0 0 50px 0;
-        text-align: center!important;
-    }
-    &__newsletter{
+.c-section {
+    //padding:120px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    &__holder {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
     }
+
+    &__heading {
+        margin-bottom: 1em;
+        text-align: center !important;
+    }
+
+    &__newsletter {}
 }
