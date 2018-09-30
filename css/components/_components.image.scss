@@ -12,7 +12,19 @@
     }
 
     &__team {
-        border-radius: 20%;
+        border-radius: 50%;
+        transform: scale(1);
+        transition: 0.7s;
+        width: 100%;
+        margin: auto;
+    }
+    &__team:hover{
+        transform: scale(0.7);
+        background: $color2;
+        transition: 0.7s;
+        width:100%;
+        border: 12px solid $color2;
+
         
     }
    
@@ -27,6 +39,7 @@
         &__caption {
             font-size: 20px;
         }
+
     }
 }
 
@@ -37,6 +50,9 @@
         }
         &__caption {
             font-size: 30px;
+        }
+        &__team{
+            max-width: 200px;
         }
     }
 }
