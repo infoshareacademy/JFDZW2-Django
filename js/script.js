@@ -40,7 +40,7 @@ window.onscroll = function () {
 function menuHighlight(navHeight, offset) {
     let product = document.querySelector('#product');
     let newsletter = document.querySelector('#newsletter');
-    let team = document.querySelector('#team');
+    let team = document.querySelector('#ourteam');
     //TODO: refactor this ugly part
     if (offset + navHeight >= product.offsetTop && offset + navHeight < newsletter.offsetTop) {
         classJsNav[0].classList.add('c-nav__link--active');

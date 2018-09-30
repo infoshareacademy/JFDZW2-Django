@@ -49,10 +49,12 @@
     .c-image {
         &__logo {
             max-width: 120px;
+            display: none;
         }
 
         &__caption {
             font-size: 30px;
+            display: none;
         }
 
         &__team {
