@@ -1,0 +1,25 @@
+/* Settings */
+@import "scss/settings/_settings.colors";
+
+
+/* Generic */
+
+@import "scss/generic/generic.box-sizing";
+@import "scss/generic/generic.normalize";
+@import "scss/generic/generic.reset";
+
+/* Elements */
+
+
+/* Ojects */
+
+@import "scss/objects/objects.layout";
+
+/* Components */
+
+@import "scss/components/components.header";
+@import "scss/components/components.navigation";
+@import "scss/components/components.footer";
+
+
+/* Utilities */
