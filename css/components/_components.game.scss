@@ -1,1 +1,39 @@
-//style dla gry
+#game-holder{
+    display: flex;
+    flex-direction: column;
+}
+.g-field {
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-right: 1px dotted red;
+    border-bottom: 1px dotted red;
+    width:100%;
+    position: relative;
+}
+.g-field:before{
+    content:"";
+    display: block;
+    padding-bottom: 100%;
+}
+.g-row{
+    display: flex;
+}
+.g-figure{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+}
+.g-bike{
+    background:url('../img/bicycle.png');
+    background-size: contain;
+}
+
+.g-obsticle{
+    background:url('../img/car.gif');
+    background-size: contain;
+}
+.g-pickup{
+    background:blue;
+}
