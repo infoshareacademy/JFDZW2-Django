@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     placeFigure("g-bike",2,4);
     placeFigure("g-obsticle",1,6);
     placeFigure("g-pickup",0,12);
+
     //Add movement
-    
-    
+    document.onkeydown = keyPress;
+
     //setEventListeners();
     //Reset
     //setResetButton();
