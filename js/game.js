@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     placeFigure("g-pickup",0,12);
     //Add movement
     
+    
     //setEventListeners();
     //Reset
     //setResetButton();
