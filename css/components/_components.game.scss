@@ -9,11 +9,13 @@
     border-bottom: 1px dotted red;
     width:100%;
     position: relative;
+    background:url('../img/grass.png');
 }
 .g-field:before{
     content:"";
     display: block;
     padding-bottom: 100%;
+    background:rgba(255,255,255,.4);
 }
 .g-row{
     display: flex;
@@ -26,7 +28,8 @@
     bottom: 0;
 }
 .g-bike{
-    background:url('../img/bicycle.png');
+    background:url('../img/bike.png');
+    transform: scaleX(-1);
     background-size: contain;
 }
 

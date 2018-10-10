@@ -1,5 +1,5 @@
 .c-box {
-  margin: auto;
+  margin: 0 auto;
 
 
   &__row {
@@ -13,7 +13,7 @@
   }
 
   &-feature {
-    font-size: 1em;
+    font-size: 1.5em;
     flex: 0 1 25%;
     //display: flex;
     align-items: center;
@@ -43,6 +43,7 @@
   }
 
   &__text {
+    color: $color3;
     margin: auto;
     padding: 10px;
   }
@@ -50,7 +51,7 @@
 
 
 .fas {
-  font-size: 6em;
+  font-size: 6.5em;
   color: $color4; //yellow
   margin: auto;
   width: 100%;

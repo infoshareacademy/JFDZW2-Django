@@ -35,6 +35,11 @@ function createFigure(animalName) {
     return figure;
 }
 
+function removeFigure (className){
+    document.querySelector(className).remove();
+}
+
+
 function findField(row, col) {
     let field = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
 

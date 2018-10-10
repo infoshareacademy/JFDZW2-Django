@@ -15,15 +15,20 @@
     padding: 2em;
     text-align: justify;
     align-items: center;
+    font-size: 1.1em;
 
     & .c-feature-h4 {
         padding: 5px 0;
+        font-size: 1.2em;
         justify-content: center;
     }
 }
 
 .c-feature-image {
     padding-right: 10px;
+    object-fit: cover;
+    display: inline-block;
+    width: auto;
 }
 
 

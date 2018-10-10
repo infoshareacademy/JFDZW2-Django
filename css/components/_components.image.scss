@@ -1,6 +1,6 @@
 .c-image {
     &__logo {
-        max-width: 110px;
+        max-width: 90px;
     }
 
     &__caption {
@@ -35,7 +35,7 @@
 @media only screen and (max-width: $media-md) {
     .c-image {
         &__logo {
-            max-width: 80px;
+            max-width: 70px;
         }
 
         &__caption {
@@ -48,8 +48,8 @@
 @media only screen and (max-width: $media-sm) {
     .c-image {
         &__logo {
-            max-width: 120px;
-            display: none;
+            max-width: 50px;
+            // display: none;
         }
 
         &__caption {
@@ -59,6 +59,17 @@
 
         &__team {
             max-width: 200px;
+        }
+    }
+}
+
+@media only screen and (max-width: $media-xs) {
+    .c-image {
+        &__logo {
+            display: none;
+        }
+        &__caption {
+            display: none;
         }
     }
 }
