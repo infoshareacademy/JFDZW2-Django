@@ -15,7 +15,7 @@
     content:"";
     display: block;
     padding-bottom: 100%;
-    background:rgba(255,255,255,.4);
+    background:rgba(255,255,255,.6);
 }
 .g-row{
     display: flex;
@@ -33,10 +33,30 @@
     background-size: contain;
 }
 
-.g-obsticle{
-    background:url('../img/car.gif');
-    background-size: contain;
+
+@each $car in $car-names {
+    .g-obsticle__car--#{$car} { 
+        background:url('../img/#{$car}.png') no-repeat center;
+        background-size: contain;
+    }
 }
+
+@each $tree in $tree-names {
+    .g-obsticle__tree--#{$tree} { 
+        background:url('../img/#{$tree}.png') no-repeat center;
+        background-size: contain;
+    }
+}
+
+@each $pickup in $pickup-names {
+    .g-pickup--#{$pickup} { 
+        background:url('../img/#{$pickup}.png') no-repeat center;
+        background-size: 50% 50%;
+    }
+}
+
+
+
 .g-pickup{
     background:blue;
 }

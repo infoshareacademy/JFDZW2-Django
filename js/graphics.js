@@ -35,7 +35,7 @@ function createFigure(animalName) {
     return figure;
 }
 
-function removeFigure (className){
+function removeFigure(className) {
     document.querySelector(className).remove();
 }
 
@@ -50,4 +50,10 @@ function placeFigure(figureName, row, col) {
     let field = findField(row, col);
     let figure = createFigure(figureName);
     field.appendChild(figure);
+}
+
+function randomObsticle(param) {
+    let obsticleArray = game.obsticleClass[param]
+    let result = obsticleArray[Math.floor(Math.random() * obsticleArray.length)];
+    return result;
 }
