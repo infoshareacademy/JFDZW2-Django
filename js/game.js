@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     placeFigure(randomObsticle("tree"), 'obsticle',3, 8);
     placeFigure(randomObsticle("pickup"), 'obsticle',3, 6);
 
-    moveObsticles();
+    
+    
+        setInterval(moveObsticles(),100);
+    
     //Add movement
     document.onkeydown = keyPress;
 
