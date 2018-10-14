@@ -1,0 +1,40 @@
+.stage_wrapper{
+    position: relative;
+    width: 100%;
+}
+
+#c-panel_top {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+
+#c-reset {
+    @include panelFieldsAll;
+    background-color: $color1;
+    color: $color6;
+    margin-top: 10px;
+    justify-content: center;
+    border: $color9 1px solid;
+    font-family:'Lato', sans-serif;
+   
+    &:hover {
+         cursor: pointer;
+         border: $color10 2px solid;
+    }
+
+}
+
+.c-box_lives {
+    @include panelFieldsAll;
+    @include fieldsScoreLives;
+}
+
+.c-box_score {
+    @include panelFieldsAll;
+    @include fieldsScoreLives;
+    margin-top: 10px;
+}
+

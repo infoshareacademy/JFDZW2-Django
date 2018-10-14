@@ -14,3 +14,20 @@ body{
     margin-left: 1.5em;
 
 }
+
+
+@mixin panelFieldsAll {
+    display: flex;
+    border-radius: 5px;
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    height: 2.5rem;
+  }
+
+@mixin fieldsScoreLives {
+    margin: 5px;
+    border: $color1 1px solid;
+    color: $color5;
+    align-items: center;
+}
