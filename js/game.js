@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     
     
-        setInterval(moveObsticles(),100);
+    setInterval(moveObsticles,1000);
     
     //Add movement
     document.onkeydown = keyPress;
