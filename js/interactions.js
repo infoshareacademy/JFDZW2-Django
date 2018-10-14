@@ -14,19 +14,36 @@ function keyPress(event) {
     findField(playerCords[0], playerCords[1]);
     if (event.keyCode == '38') {
         // up
-        if (playerCords[0] <= 0) {
-        } else if (playerCords[0] <= game.boardHeight - 1) {
+        if (playerCords[0] <= 0) {} else if (playerCords[0] <= game.boardHeight - 1) {
             removeFigure('.g-bike');
-            placeFigure('g-bike', (playerCords[0] - 1), playerCords[1]);
+            placeFigure('g-bike', 'player',(playerCords[0] - 1), playerCords[1]);
         }
 
     } else if (event.keyCode == '40') {
         // down
         if (playerCords[0] < game.boardHeight - 1) {
             removeFigure('.g-bike');
-            placeFigure('g-bike', playerCords[0] + 1, playerCords[1]);
+            placeFigure('g-bike', 'player',playerCords[0] + 1, playerCords[1]);
         } else if (playerCords[0] >= game.boardHeight - 1) {
 
         }
     }
+}
+
+function moveObsticles() {
+    let obsticles = document.querySelectorAll('.obsticle');
+
+    obsticles.forEach(function (x) {
+        let classList = x.classList[1];
+        let parentCol = x.parentElement.dataset.col;
+        let parentRow = x.parentElement.dataset.row;
+        if(parentCol <= 1){
+            findField(parentRow,parentCol).removeChild(x);
+        } else {
+            findField(parentRow,parentCol).removeChild(x);
+            placeFigure(classList, 'obsticle', parentRow, parentCol - 1)
+        }
+        
+
+    });
 }

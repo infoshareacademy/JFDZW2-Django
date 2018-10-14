@@ -28,9 +28,9 @@ function drawBoard() {
     }
 }
 
-function createFigure(animalName) {
+function createFigure(animalName, objClass) {
     var figure = document.createElement("div");
-    figure.classList.add("g-figure", animalName);
+    figure.classList.add("g-figure", animalName, objClass);
 
     return figure;
 }
@@ -46,9 +46,9 @@ function findField(row, col) {
     return field;
 }
 
-function placeFigure(figureName, row, col) {
+function placeFigure(figureName, objClass, row, col) {
     let field = findField(row, col);
-    let figure = createFigure(figureName);
+    let figure = createFigure(figureName, objClass);
     field.appendChild(figure);
 }
 

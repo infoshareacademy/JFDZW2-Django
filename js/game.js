@@ -22,15 +22,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     drawBoard();
 
     //Draw pawns
-    placeFigure("g-bike", 2, 4);
-    placeFigure(randomObsticle("car"), 1, 6);
-    placeFigure(randomObsticle("car"), 3, 10);
-    placeFigure(randomObsticle("pickup"), 0, 12);
-    placeFigure(randomObsticle("pickup"), 2, 9);
-    placeFigure(randomObsticle("tree"), 3, 7);
-    placeFigure(randomObsticle("tree"), 1, 10);
+    placeFigure("g-bike", 'player',2, 4);
+    placeFigure(randomObsticle("car"), 'obsticle',1, 6);
+    placeFigure(randomObsticle("car"), 'obsticle',3, 10);
+    placeFigure(randomObsticle("tree"), 'obsticle',4, 10);
+    placeFigure(randomObsticle("tree"), 'obsticle',3, 8);
+    placeFigure(randomObsticle("pickup"), 'obsticle',3, 6);
 
-
+    moveObsticles();
     //Add movement
     document.onkeydown = keyPress;
 
