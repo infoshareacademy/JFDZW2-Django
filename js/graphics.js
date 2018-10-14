@@ -28,9 +28,9 @@ function drawBoard() {
     }
 }
 
-function createFigure(animalName) {
+function createFigure(figureName) {
     var figure = document.createElement("div");
-    figure.classList.add("g-figure", animalName);
+    figure.className = "g-figure " + figureName;
 
     return figure;
 }
@@ -54,6 +54,7 @@ function placeFigure(figureName, row, col) {
 
 function randomObsticle(param) {
     let obsticleArray = game.obsticleClass[param]
-    let result = obsticleArray[Math.floor(Math.random() * obsticleArray.length)];
+    let result = 'g-obsticle ' + obsticleArray[Math.floor(Math.random() * obsticleArray.length)];
+    console.log(result);
     return result;
 }
