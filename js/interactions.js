@@ -37,7 +37,7 @@ function moveObsticles() {
         let classList = x.classList[1];
         let parentCol = x.parentElement.dataset.col;
         let parentRow = x.parentElement.dataset.row;
-        if(parentCol <= 1){
+        if(parentCol < 1){
             findField(parentRow,parentCol).removeChild(x);
             game.points += 100;
         } else {

@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 POINTS: ${game.points}`);
             return;
         }
+        backgrounMovementIllusion('.g-field', 'g-field-1');
+        backgrounMovementIllusion('.g-bike', 'g-bike-1');
         moveObsticles();
         collisionDetection();
         game.turn++;
