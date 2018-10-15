@@ -28,9 +28,9 @@ function drawBoard() {
     }
 }
 
-function createFigure(figureName) {
+function createFigure(animalName, objClass) {
     var figure = document.createElement("div");
-    figure.className = "g-figure " + figureName;
+    figure.classList.add("g-figure", animalName, objClass);
 
     return figure;
 }
@@ -46,15 +46,14 @@ function findField(row, col) {
     return field;
 }
 
-function placeFigure(figureName, row, col) {
+function placeFigure(figureName, objClass, row, col) {
     let field = findField(row, col);
-    let figure = createFigure(figureName);
+    let figure = createFigure(figureName, objClass);
     field.appendChild(figure);
 }
 
 function randomObsticle(param) {
     let obsticleArray = game.obsticleClass[param]
-    let result = 'g-obsticle ' + obsticleArray[Math.floor(Math.random() * obsticleArray.length)];
-    console.log(result);
+    let result = obsticleArray[Math.floor(Math.random() * obsticleArray.length)];
     return result;
 }
