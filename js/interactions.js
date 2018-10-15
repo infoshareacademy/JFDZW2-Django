@@ -4,10 +4,7 @@ function findPlayer() {
     let col = parseInt(player.dataset.col);
     return [row, col]
 }
-
-
-
-
+//TODO: przepisać poruszanie za pomocą funkcji parentCol/Row i appendChild
 function keyPress(event) {
 
     let playerCords = findPlayer();
@@ -29,23 +26,26 @@ function keyPress(event) {
         }
     }
 }
+function parentCol(elementClass){
+    return elementClass.parentElement.dataset.col;
+};
 
+function parentRow(elementClass){
+    return elementClass.parentElement.dataset.row;
+};
 function moveObsticles() {
     let obsticles = document.querySelectorAll('.obsticle');
 
-    obsticles.forEach(function (x) {
-        let classList = x.classList[1];
-        let parentCol = x.parentElement.dataset.col;
-        let parentRow = x.parentElement.dataset.row;
-        if(parentCol <= 1){
-            findField(parentRow,parentCol).removeChild(x);
-            game.points += 100;
+    obsticles.forEach(function (obsticle) {
+        let obsticleY = parentCol(obsticle);
+        let obsticleX = parentRow(obsticle);
+        if(obsticleY <= 0){
+            findField(obsticleX,obsticleY).removeChild(obsticle);
+            game.points += game.obsticlePoints;
         } else {
-            findField(parentRow,parentCol).removeChild(x);
-            placeFigure(classList, 'obsticle', parentRow, parentCol - 1)
+            let field = findField(obsticleX, obsticleY - 1);
+            field.appendChild(obsticle);
         }
-        
-
     });
 }
 
@@ -58,19 +58,11 @@ function collisionDetection(){
         let obsticleX = parentRow(x);
         let obsticleY = parentCol(x);
         if(playerX === obsticleX && playerY === obsticleY){
+            //tutaj funkcja collisionEffect()
             game.lives--;
             findField(obsticleX,obsticleY).removeChild(x);
-            alert(`COLLISION! 
-LIVES: ${game.lives}
-POINTS: ${game.points}`);
+            alert(`COLLISION! \n LIVES: ${game.lives} \n POINTS: ${game.points}`);
         }
     });
 }
 
-function parentCol(elementClass){
-    return elementClass.parentElement.dataset.col;
-};
-
-function parentRow(elementClass){
-    return elementClass.parentElement.dataset.row;
-};

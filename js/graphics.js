@@ -39,7 +39,6 @@ function removeFigure(className) {
     document.querySelector(className).remove();
 }
 
-
 function findField(row, col) {
     let field = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
 
@@ -52,8 +51,22 @@ function placeFigure(figureName, objClass, row, col) {
     field.appendChild(figure);
 }
 
+function placePlayer() {
+    let playerRow = Math.floor(game.boardHeight / 2);
+    let playerCol = Math.floor(game.boardWidth / 7);
+    placeFigure("g-bike", 'player', playerRow, playerCol);
+}
+
 function randomObsticle(param) {
     let obsticleArray = game.obsticleClass[param]
     let result = obsticleArray[Math.floor(Math.random() * obsticleArray.length)];
     return result;
+}
+
+function placeObsticle(turn) {
+    if (turn % 2 === 0) {
+        placeFigure(randomObsticle("tree"), 'obsticle', Math.floor(Math.random() * game.boardHeight), game.boardWidth - 1);
+        placeFigure(randomObsticle("pickup"), 'obsticle', Math.floor(Math.random() * game.boardHeight), game.boardWidth - 1);
+    }
+    // placeFigure(randomObsticle("tree"), 'obsticle',  2, game.boardWidth -1);
 }
