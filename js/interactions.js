@@ -39,6 +39,7 @@ function moveObsticles() {
         let parentRow = x.parentElement.dataset.row;
         if(parentCol <= 1){
             findField(parentRow,parentCol).removeChild(x);
+            game.points += 100;
         } else {
             findField(parentRow,parentCol).removeChild(x);
             placeFigure(classList, 'obsticle', parentRow, parentCol - 1)
@@ -47,3 +48,29 @@ function moveObsticles() {
 
     });
 }
+
+function collisionDetection(){
+    let obsticles = document.querySelectorAll('.obsticle');
+    let player = document.querySelector('.player');
+    let playerX = parentRow(player);
+    let playerY = parentCol(player);
+    obsticles.forEach((x)=>{
+        let obsticleX = parentRow(x);
+        let obsticleY = parentCol(x);
+        if(playerX === obsticleX && playerY === obsticleY){
+            game.lives--;
+            findField(obsticleX,obsticleY).removeChild(x);
+            alert(`COLLISION! 
+LIVES: ${game.lives}
+POINTS: ${game.points}`);
+        }
+    });
+}
+
+function parentCol(elementClass){
+    return elementClass.parentElement.dataset.col;
+};
+
+function parentRow(elementClass){
+    return elementClass.parentElement.dataset.row;
+};
