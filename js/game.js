@@ -1,7 +1,7 @@
 //obiekt globalny z ustawieniami gry
 const game = {
     boardHeight: 7,
-    boardWidth: 28, // optymalnie 4 x boardHeight
+    boardWidth: 20, // optymalnie 4 x boardHeight
     defaultSpeed: 200, //szybkość odświerzania w ms
     fasterSpeed: 150,
     fastestSpeed: 100,
@@ -13,15 +13,16 @@ const game = {
             appearInterval: 3
         },
         pickupGood: {
-            obsticleClass: ['g-pickup--bottle', 'g-pickup--coin'],
+            obsticleClass: ['g-pickup--mushroom', 'g-pickup--coin'],
             appearInterval: 11
         },
         pickupBad: {
-            obsticleClass: ['g-pickup--poison', 'g-pickup--mushroom'],
+            obsticleClass: ['g-pickup--poison', 'g-pickup--bottle'],
             appearInterval: 5
         }
         //pickupLife
     },
+    drunkState: [false, undefined],
     turn: 0,
     points: 0,
     lives: 3
@@ -45,9 +46,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     //Winning condition checking
     function gameLoop() {
-
+        collisionDetection();
+        alcoEffectReset();
         if (game.lives <= 0) {
             clearInterval(gameInterval);
+            playAudio('game_over', 'wav');
             alert(`GAME OVER \n POINTS: ${game.points}`);
             return;
         } else {
