@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             // random obsticle on random row
             placeAllObsticles(game.turn);
         }
+        backgrounMovementIllusion('.g-field', 'g-field-1');
+        backgrounMovementIllusion('.g-bike', 'g-bike-1');
         moveObsticles();
         collisionDetection();
         game.turn++;

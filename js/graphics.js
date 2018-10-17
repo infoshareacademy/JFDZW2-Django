@@ -81,3 +81,15 @@ function placeAllObsticles(turn) {
         })
     }
 }
+function backgrounMovementIllusion(target, classToSwap){
+    let field = document.querySelectorAll(target);
+        if (game.turn % 2 === 0) {
+            field.forEach((x) => {
+                x.classList.add(classToSwap);
+            });
+        } else {
+            field.forEach((x) => {
+                x.classList.remove(classToSwap);
+            });
+        }
+}
