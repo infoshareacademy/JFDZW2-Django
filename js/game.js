@@ -1,16 +1,26 @@
 //obiekt globalny z ustawieniami gry
 const game = {
     boardHeight: 7,
-    boardWidth: 30,
+    boardWidth: 28, // optymalnie 4 x boardHeight
     defaultSpeed: 200, //szybkość odświerzania w ms
     fasterSpeed: 150,
     fastestSpeed: 100,
     obsticlePoints: 100,
     pickupPoints: 300,
-    obsticleClass: {
-       // car: ['g-obsticle__car--tug', 'g-obsticle__car--police', 'g-obsticle__car--passenger', 'g-obsticle__car--family'],
-        tree: ['g-obsticle__tree--maple', 'g-obsticle__tree--apple', 'g-obsticle__tree--pine', 'g-obsticle__tree--oak'],
-        pickup: ['g-pickup--bottle', 'g-pickup--poison', 'g-pickup--mushroom', 'g-pickup--coin']
+    obsticles: {    
+        tree: {
+            obsticleClass: ['g-obsticle__tree--maple', 'g-obsticle__tree--apple', 'g-obsticle__tree--pine', 'g-obsticle__tree--oak'],
+            appearInterval: 3
+        },
+        pickupGood: {
+            obsticleClass: ['g-pickup--bottle', 'g-pickup--coin'],
+            appearInterval: 11
+        },
+        pickupBad: {
+            obsticleClass: ['g-pickup--poison', 'g-pickup--mushroom'],
+            appearInterval: 5
+        }
+        //pickupLife
     },
     turn: 0,
     points: 0,
@@ -42,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             return;
         } else {
             // random obsticle on random row
-            placeObsticle(game.turn);
+            placeAllObsticles(game.turn);
         }
         moveObsticles();
         collisionDetection();

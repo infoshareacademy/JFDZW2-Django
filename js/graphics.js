@@ -27,6 +27,12 @@ function drawBoard() {
         board.appendChild(row);
     }
 }
+// szukanie pola do wstawienia figury
+function findField(row, col) {
+    let field = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+
+    return field;
+}
 
 function createFigure(animalName, objClass) {
     var figure = document.createElement("div");
@@ -35,20 +41,14 @@ function createFigure(animalName, objClass) {
     return figure;
 }
 
-function removeFigure(className) {
-    document.querySelector(className).remove();
-}
-
-function findField(row, col) {
-    let field = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
-
-    return field;
-}
-
 function placeFigure(figureName, objClass, row, col) {
     let field = findField(row, col);
     let figure = createFigure(figureName, objClass);
     field.appendChild(figure);
+}
+
+function removeFigure(className) {
+    document.querySelector(className).remove();
 }
 
 function placePlayer() {
@@ -57,16 +57,27 @@ function placePlayer() {
     placeFigure("g-bike", 'player', playerRow, playerCol);
 }
 
-function randomObsticle(param) {
-    let obsticleArray = game.obsticleClass[param]
-    let result = obsticleArray[Math.floor(Math.random() * obsticleArray.length)];
-    return result;
+function placeObsticle(randomClass) {
+    let row = Math.floor(Math.random() * game.boardHeight);
+    let col = game.boardWidth - 1;
+    let field = findField(row, col);
+
+    if (!field.hasChildNodes()) { // sprawdzanie czy juz nie ma jakiejś przeszkody w tym polu
+        placeFigure(randomClass, 'obsticle', row, col);
+    }
 }
 
-function placeObsticle(turn) {
-    if (turn % 2 === 0) {
-        placeFigure(randomObsticle("tree"), 'obsticle', Math.floor(Math.random() * game.boardHeight), game.boardWidth - 1);
-        placeFigure(randomObsticle("pickup"), 'obsticle', Math.floor(Math.random() * game.boardHeight), game.boardWidth - 1);
+function placeAllObsticles(turn) {
+    const obsticleArray = Object.values(game.obsticles); //pobieranie wartości ustawień przeszkód
+
+    for (let fieldIndex = 0; fieldIndex <= Math.floor(game.boardHeight / 3); fieldIndex++) { // ilośc wygenerowanych przeszkód w danej turze
+        obsticleArray.forEach(function (obsticle) {
+            if (turn % obsticle.appearInterval === 0) { // sprawdzanie każdej przeszkody czy juz czas się pojawić
+                const randomClass = obsticle.obsticleClass[Math.floor(Math.random() * obsticle.obsticleClass.length)] //losowanie klasy dla przeszkody
+
+                placeObsticle(randomClass);
+                fieldIndex++
+            }
+        })
     }
-    // placeFigure(randomObsticle("tree"), 'obsticle',  2, game.boardWidth -1);
 }
