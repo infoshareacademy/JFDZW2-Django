@@ -27,7 +27,7 @@ function drawBoard() {
         board.appendChild(row);
     }
 }
-
+// rysownie ilości żyć
 function showLives() {
     const livesHolder = document.getElementById("g-lives");
 
@@ -38,6 +38,12 @@ function showLives() {
         life.classList.add("g-life");
         livesHolder.appendChild(life);
     }
+}
+// wypisywanie ilości punktów
+function writeScore(){
+    const scoreCounter = document.getElementById("g-score");
+
+    scoreCounter.innerHTML = game.points;
 }
 
 // szukanie pola do wstawienia figury

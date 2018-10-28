@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         moveObsticles();
         collisionDetection();
         showLives();
+        writeScore();
         game.turn++;
     }
 });
