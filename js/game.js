@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     placePlayer();
 
+    showLives();
+
     // GAME MAIN LOOP
     alert(`GAME IS STARTING`);
     let gameInterval = setInterval(gameLoop, game.defaultSpeed);
@@ -61,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         backgrounMovementIllusion('.g-bike', 'g-bike-1');
         moveObsticles();
         collisionDetection();
+        showLives();
         game.turn++;
     }
 });
