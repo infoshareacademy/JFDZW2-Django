@@ -27,6 +27,25 @@ function drawBoard() {
         board.appendChild(row);
     }
 }
+// rysownie ilości żyć
+function showLives() {
+    const livesHolder = document.getElementById("g-lives");
+
+    livesHolder.innerHTML = '';
+
+    for (var i = 0; i < game.lives; i++) {
+        const life = document.createElement("li");
+        life.classList.add("g-life");
+        livesHolder.appendChild(life);
+    }
+}
+// wypisywanie ilości punktów
+function writeScore(){
+    const scoreCounter = document.getElementById("g-score");
+
+    scoreCounter.innerHTML = game.points;
+}
+
 // szukanie pola do wstawienia figury
 function findField(row, col) {
     let field = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
@@ -81,15 +100,16 @@ function placeAllObsticles(turn) {
         })
     }
 }
-function backgrounMovementIllusion(target, classToSwap){
+
+function backgrounMovementIllusion(target, classToSwap) {
     let field = document.querySelectorAll(target);
-        if (game.turn % 2 === 0) {
-            field.forEach((x) => {
-                x.classList.add(classToSwap);
-            });
-        } else {
-            field.forEach((x) => {
-                x.classList.remove(classToSwap);
-            });
-        }
+    if (game.turn % 2 === 0) {
+        field.forEach((x) => {
+            x.classList.add(classToSwap);
+        });
+    } else {
+        field.forEach((x) => {
+            x.classList.remove(classToSwap);
+        });
+    }
 }

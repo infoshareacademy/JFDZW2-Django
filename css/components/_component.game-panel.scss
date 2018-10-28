@@ -27,6 +27,19 @@
 
 }
 
+#g-lives{
+    list-style: none;
+}
+.g-life{
+    flex-grow: 1;
+    flex-shrink: 1;
+    width:1rem;
+    height: 1rem;
+    position: relative;
+    background:url('../img/heart.png') no-repeat center;
+    background-size: contain;
+}
+
 .c-box_lives {
     @include panelFieldsAll;
     @include fieldsScoreLives;

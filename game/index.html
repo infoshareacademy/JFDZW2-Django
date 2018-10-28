@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,30 +15,33 @@
     <script src="../js/interactions.js"></script>
     <script src="../js/game.js"></script>
 </head>
+
 <body>
-        <div class="o-wrapper--full">
-                <header class="c-header o-header o-wrapper o-flex o-flex--small">
-                    <figure class="c-header__item o-flex o-flex__item">
-                        <a data-slide="#top" class="js-smooth" href="#"><img class="js-logo c-image__logo" src="../img/logo.png"
-                                        alt=""></a>
-                        <figcaption class="c-image__caption">Pokonaj<br>Trasę</figcaption>
-                    </figure>
-                          
-                    <div class="c-panel_top">
-                        <div class="c-box_lives">
-                                <p>Lives:</p>
-                        </div>
-                                    
-                        <div class="c-box_score">
-                                <p>Score:</p>
-                        </div>
-                                                   
-                        <input id="c-reset" type="button" value="Reset" />
-                    </div>
-                </header>
+    <div class="o-wrapper--full">
+        <header class="c-header o-header o-wrapper o-flex o-flex--small">
+            <figure class="c-header__item o-flex o-flex__item">
+                <a data-slide="#top" class="js-smooth" href="#"><img class="js-logo c-image__logo" src="../img/logo.png" alt=""></a>
+                <figcaption class="c-image__caption">Pokonaj<br>Trasę</figcaption>
+            </figure>
+
+            <div class="c-panel_top o-flex">
+                <div class="c-box_lives">
+                    Lives: 
+                    <ul id="g-lives" class="o-flex"></ul>
+                </div>
+
+                <div class="c-box_score">
+                    Score: <span id="g-score"></span>
+                </div>
+
+                <input id="c-reset" type="button" value="Reset" />
             </div>
+        </header>
+    </div>
     <div id="game-holder">
 
     </div>
+
 </body>
+
 </html>
