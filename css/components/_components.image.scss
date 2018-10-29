@@ -3,7 +3,22 @@
         max-width: 90px;
     }
 
+    &__game-logo {
+        margin: 10px 10px;
+        max-width: 90px;
+        object-fit: contain;
+        display: block;
+    }
+
     &__caption {
+        padding: 0 25px;
+        color: $color1;
+        font-weight: lighter;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    &__game {
         padding: 0 25px;
         color: $color1;
         font-weight: lighter;
@@ -17,7 +32,7 @@
         transform: scale(1);
         transition: 0.7s;
         margin: auto;
-        
+
     }
 
     &__team:hover {
@@ -68,6 +83,7 @@
         &__logo {
             display: none;
         }
+
         &__caption {
             display: none;
         }

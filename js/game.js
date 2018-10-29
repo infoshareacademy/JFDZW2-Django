@@ -5,9 +5,9 @@ const game = {
     defaultSpeed: 200, //szybkość odświerzania w ms
     fasterSpeed: 150,
     fastestSpeed: 100,
-    obsticlePoints: 100,
+    obsticlePoints: 10,
     pickupPoints: 300,
-    obsticles: {    
+    obsticles: {
         tree: {
             obsticleClass: ['g-obsticle__tree--maple', 'g-obsticle__tree--apple', 'g-obsticle__tree--pine', 'g-obsticle__tree--oak'],
             appearInterval: 3
@@ -32,17 +32,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log("DOM fully loaded and parsed");
 
     drawBoard();
-
     placePlayer();
-
     showLives();
-
-    // GAME MAIN LOOP
-    alert(`GAME IS STARTING`);
-    let gameInterval = setInterval(gameLoop, game.defaultSpeed);
-
     //Add player movement
     document.onkeydown = keyPress;
+    let gameInterval;
+
+    // GAME MAIN LOOP
+    initScreen();
+
 
     //Reset
 
@@ -53,7 +51,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (game.lives <= 0) {
             clearInterval(gameInterval);
             playAudio('game_over', 'wav');
-            alert(`GAME OVER \n POINTS: ${game.points}`);
+
+            let modal = document.querySelector('.c-modal');
+            modal.innerHTML = '';
+            let insideModal = document.createElement('div');
+            insideModal.classList.add('c-modal-content');
+            insideModal.innerHTML = `Points: ${game.points}`;
+            modal.appendChild(insideModal);
+            modal.style.display = '';
             return;
         } else {
             // random obsticle on random row
@@ -66,5 +71,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         showLives();
         writeScore();
         game.turn++;
+    }
+
+    // init screen function
+    function initScreen() {
+        let btn = document.querySelector('.js-startBtn');
+        let modal = document.querySelector('.c-modal');
+        btn.addEventListener('click', function () {
+            gameInterval = setInterval(gameLoop, game.defaultSpeed);
+            modal.style.display = 'none';
+        });
     }
 });

@@ -97,7 +97,7 @@ function collisionEffect(obsticle, player) {
         playAudio('1-up', 'wav');
         console.log('mushroom', game.lives);
     } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[0]){
-        game.points - 1000;
+        game.points -= 1000;
         playAudio('bottle', 'wav');
         console.log('poison', game.points);
     } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[1]){
