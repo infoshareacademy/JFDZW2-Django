@@ -1,4 +1,59 @@
-section.c-box-newsletter{
+.c-box__newsletter {
+    &--info {
+        display: block;
+        width: 68%;
+        margin: 20px auto;
+        padding: 20px 0 0 0;
+        border-radius: 5px;
+        font-size: 30px;
+        font-weight: 700;
+        color: $color2;
+
+    }
+
+    &--desc {
+        color: $color6;
+        font-size: 1.1em;
+        margin: 40px;
+        text-align: justify;
+        
+    }
+
+    &--form {
+        &>input {
+            border: none;
+            padding: 20px;
+            margin: 0 5px;
+            box-sizing: border-box;
+
+            &:nth-child(1) {
+                width: 60%;
+            }
+
+            &:focus {
+                outline: none;
+                outline-style: none;
+                box-shadow: 0 0 2px 2px $color1;
+            }
+        }
+    }
+
+    &--button {
+        outline: none;
+        outline-style: none;
+        background-color: $color1;
+        border: none;
+        color: $color6;
+
+        &:focus {
+            outline: none;
+            outline-style: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.c-box-newsletter {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -6,31 +61,31 @@ section.c-box-newsletter{
     background-color: $color3;
 }
 
-h2.c-box-newsletter--heading{
-    margin: 1.2rem;
-    color: $color2;
-}
+// h2.c-box-newsletter--heading{
+//     margin: 1.2rem;
+//     color: $color2;
+// }
 
-form.c-box-newsletter{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-div.c-box-newsletter{
-    color: $color6;
-    display: flex;
-    justify-content: space-between;
-    background-color: $color3;
-}
+// form.c-box-newsletter{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+// }
+// div.c-box-newsletter{
+//     color: $color6;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: $color3;
+// }
 
-p.c-box-newsletter{
-    text-align: justify;
-    margin: 1.2rem;
-}
+// p.c-box-newsletter{
+//     text-align: justify;
+//     margin: 1.2rem;
+// }
 
-input{
-    display: flex;
-    margin: 5px;
-    height: 2rem;
-}
+// input{
+//     display: flex;
+//     margin: 5px;
+//     height: 2rem;
+// }

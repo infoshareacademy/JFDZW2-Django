@@ -1,23 +1,30 @@
 .o-cookie-info{
-    border: 1px solid $color3;
-    border-radius: 20px;
-    background-color: $color3;
-    padding: 10px;
-    opacity: 0.7;
+    // border: 1px solid $color3;
+    // border-radius: 20px;
+    // background-color: $color3;
+    background-color: $color1;
+    padding: 20px;
+    color: $color6;
+    // opacity: 0.7;
     position: fixed;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    // bottom: 10px;
+    // left: 10px;
+    // right: 10px;
+    bottom: 0;
+    left: 0;
     display: flex;
+    text-align: center;
     justify-content: space-around;
 }
 
 button.o-cookie-hide{
-    margin: 0;
-    padding: 5px;
-    border: 1px solid $color3;
-    border-radius: 10px;
+    // margin: 0;
+    padding: 10px;
+    // border: 1px solid $color3;
+    // border-radius: 10px;
     font-size: 14px;
+    margin: 0 10px;
+    background-color: $color5;
 }
 
 .o-cookie-info--hidden{

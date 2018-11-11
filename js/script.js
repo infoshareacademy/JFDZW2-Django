@@ -81,21 +81,51 @@ document.addEventListener("DOMContentLoaded", function (event) {
             main.style.marginTop = 0;
         }
     }
+});
+// COOKIES
 
-    // COOKIES
 
-    if (localStorage.getItem('state') === null) {
-        localStorage.setItem('state', 'on');
-    } else if (localStorage.getItem('state') === 'off') {
+
+
+if (localStorage.getItem('state') === null) {
+    localStorage.setItem('state', 'on');
+} else if (localStorage.getItem('state') === 'off') {
+    var cookieBox = document.querySelector('.o-cookie-info');
+    cookieBox.classList.add('o-cookie-info--hidden');
+}
+
+function cookieOff() {
+    if (localStorage.getItem('state') === 'on') {
+        localStorage.setItem('state', 'off');
         var cookieBox = document.querySelector('.o-cookie-info');
         cookieBox.classList.add('o-cookie-info--hidden');
     }
+}
 
-    function cookieOff() {
-        if (localStorage.getItem('state') === 'on') {
-            localStorage.setItem('state', 'off');
-            var cookieBox = document.querySelector('.o-cookie-info');
-            cookieBox.classList.add('o-cookie-info--hidden');
+// FORM VALIDATE
+
+function formValidate() {
+    let x = document.forms["form"]["emails[]"].value;
+    let formInfo = document.getElementById('js-formInfo');
+    let emailCheck = validateEmail(x);
+    if (emailCheck === true) {
+        formInfo.classList.add('u-hidden');
+        return true;
+    } else if (!emailCheck) {
+
+        if (x == "") {
+            formInfo.innerText = 'Proszę wprowadź adres e-mail';
+            formInfo.classList.remove('u-hidden');
+            return false;
+        } else {
+            formInfo.innerText = 'Proszę wprowadź poprawny adres e-mail';
+            formInfo.classList.remove('u-hidden');
+            return false;
         }
     }
-});
+}
+
+function validateEmail(email) {
+    let regExp = /\S+@\S+\.\S+/;
+    return regExp.test(email);
+}
