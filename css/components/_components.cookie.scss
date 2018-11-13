@@ -1,15 +1,10 @@
-.o-cookie-info{
-    // border: 1px solid $color3;
-    // border-radius: 20px;
-    // background-color: $color3;
+.o-cookie-info {
+
     background-color: $color1;
+    width: 100%;
     padding: 20px;
     color: $color6;
-    // opacity: 0.7;
     position: fixed;
-    // bottom: 10px;
-    // left: 10px;
-    // right: 10px;
     bottom: 0;
     left: 0;
     display: flex;
@@ -17,16 +12,13 @@
     justify-content: space-around;
 }
 
-button.o-cookie-hide{
-    // margin: 0;
+button.o-cookie-hide {
     padding: 10px;
-    // border: 1px solid $color3;
-    // border-radius: 10px;
     font-size: 14px;
     margin: 0 10px;
     background-color: $color5;
 }
 
-.o-cookie-info--hidden{
+.o-cookie-info--hidden {
     display: none;
 }

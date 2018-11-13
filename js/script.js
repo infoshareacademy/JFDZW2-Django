@@ -108,21 +108,18 @@ function formValidate() {
     let x = document.forms["form"]["emails[]"].value;
     let formInfo = document.getElementById('js-formInfo');
     let emailCheck = validateEmail(x);
-    if (emailCheck === true) {
-        formInfo.classList.add('u-hidden');
-        return true;
-    } else if (!emailCheck) {
-
-        if (x == "") {
+    if (!emailCheck) {
+        if (x === '') {
             formInfo.innerText = 'Proszę wprowadź adres e-mail';
             formInfo.classList.remove('u-hidden');
-            return false;
         } else {
             formInfo.innerText = 'Proszę wprowadź poprawny adres e-mail';
             formInfo.classList.remove('u-hidden');
-            return false;
         }
+        return emailCheck;
     }
+    formInfo.classList.add('u-hidden');
+    return emailCheck;
 }
 
 function validateEmail(email) {
