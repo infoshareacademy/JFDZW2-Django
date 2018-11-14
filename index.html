@@ -122,13 +122,19 @@
         <section id="newsletter" class="o-wrapper--full c-box c-box-newsletter c-section">
             <div class="o-wrapper c-section__holder">
                 <h2 class="c-section__heading c-section__newsletter">Zapisz się na newsletter!</h2>
-                <div class="c-box-newsletter">
-                    <p class="c-box-newsletter">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, optio
-                        alias. Soluta, amet repellendus rem quidem illum fuga fugit? Architecto nihil magni neque
-                        magnam laborum itaque iure maiores quas cupiditate?</p>
-                    <form class="c-box-newsletter">
-                        <input type="email" placeholder="Email">
-                        <input class="c-box-newsletter--button" type="submit" value="ZAPISZ SIĘ">
+                <div class="o-wrapper">
+                    <p class="c-box__newsletter--desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, optio
+                        alias. Soluta, amet repellendus rem quidem illum fuga fugit? Architecto nihil magni neque magnam laborum itaque iure maiores quas cupiditate? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium eum reiciendis repellat ipsum obcaecati distinctio inventore voluptates perferendis laboriosam voluptatum impedit est repellendus, labore iste quia sequi.</p>
+                    
+                    <form name="form" onsubmit="return formValidate()" class="c-box__newsletter--form" action="https://emaillabs-sender.herokuapp.com/" method="POST">
+                        <input type="text" name="emails[]" placeholder="Wpisz swój e-mail">
+                        <input type="hidden" name="subject" value="pokonajtrase.pl | Zapis do newsletter'a!">
+                        <input type="hidden" name="message" value="Dziękujemy za zapis do naszego newsletter'a. Poniżej znajduje się link do strony z grą:<br><a href='http://www.django.jfdzw2.is-academy.pl/game/'>http://www.django.jfdzw2.is-academy.pl/game/</a><br>Życzymy udanej zabawy!">
+                        <input type="hidden" name="from" value="newsletter@pokonajtrase.pl">
+                        <input type="hidden" name="fromName" value="Pokonaj Trasę">
+                        <input type="hidden" name="redirect" value="http://www.django.jfdzw2.is-academy.pl/game/">
+                        <input class="c-box__newsletter--button" type="submit" value="Wyślij!">
+                        <span id="js-formInfo" class="c-box__newsletter--info u-hidden"></span>
                     </form>
                 </div>
             </div>
@@ -241,7 +247,7 @@
                 provident architecto, nihil unde, maiores atque dolorum. Voluptatibus officia tempora commodi quo
                 consectetur,
                 veniam soluta.</p>
-            <button onclick="cookieOff()" class="o-cookie-hide">Zamknij</button>
+            <button onclick="cookieOff()" class="o-cookie-hide c-box__newsletter--button">Zamknij</button>
         </div>
         <div class="o-wrapper">
             <p>&copy; 2018 django Team</p>
