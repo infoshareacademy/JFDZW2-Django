@@ -1,74 +1,103 @@
-#game-holder{
+#game-holder {
     display: flex;
     flex-direction: column;
+    transition: all 2s;
+
+    &.alco-effect {
+        -webkit-filter: blur(5px);
+        // /* Safari 6.0 - 9.0 */
+        filter: blur(5px);
+    }
+}
+.points-plus{
+    background:url('../img/points-plus.png') no-repeat center;
+    background-size: contain;
+}
+.points-minus{
+    background:url('../img/points-minus.png') no-repeat center;
+    background-size: contain;
+}
+.heart-plus{
+    background:url('../img/heart-plus.png') no-repeat center;
+    background-size: contain;
+}
+.heart-minus{
+    background:url('../img/heart-minus.png') no-repeat center;
+    background-size: contain;
 }
 .g-field {
     flex-grow: 1;
     flex-shrink: 1;
     // border-right: 1px dotted red;
     // border-bottom: 1px dotted red;
-    width:100%;
+    width: 100%;
     position: relative;
-    background:url('../img/grass.png') no-repeat center;
+    background: url('../img/grass.png') no-repeat center;
     background-size: contain;
 }
+
 .g-field-1 {
-    background:url('../img/grass1.png') no-repeat center;
+    background: url('../img/grass1.png') no-repeat center;
     background-size: contain;
 }
-.g-field:before{
-    content:"";
+
+.g-field:before {
+    content: "";
     display: block;
     padding-bottom: 100%;
-    background:rgba(255,255,255,.6);
+    background: rgba(255, 255, 255, .6);
 }
-.g-row{
+
+.g-row {
     display: flex;
 }
-.g-figure{
+
+.g-figure {
     position: absolute;
-    top:0;
-    left:0;
-    right:0;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
 }
-.g-bike{
-    background:url('../img/bike.png');
+
+.g-bike {
+    background: url('../img/bike.png');
     transform: scaleX(-1);
     background-size: contain;
 }
-.g-bike-1{
-    background:url('../img/bike1.png');
+
+.g-bike-1 {
+    background: url('../img/bike1.png');
     transform: scaleX(-1);
     background-size: contain;
 }
 
 
 @each $car in $car-names {
-    .g-obsticle__car--#{$car} { 
+    .g-obsticle__car--#{$car} {
         background:url('../img/#{$car}.png') no-repeat center;
         background-size: contain;
     }
 }
 
 @each $tree in $tree-names {
-    .g-obsticle__tree--#{$tree} { 
+    .g-obsticle__tree--#{$tree} {
         background:url('../img/#{$tree}.png') no-repeat center;
         background-size: contain;
     }
 }
 
 @each $pickup in $pickup-names {
-    .g-pickup--#{$pickup} { 
+    .g-pickup--#{$pickup} {
         background:url('../img/#{$pickup}.png') no-repeat center;
         background-size: 50% 50%;
     }
 }
 
-.player-alco{
+.player-alco {
     filter: saturate(8);
 }
 
-.g-pickup{
-    background:blue;
+.g-pickup {
+    background: blue;
 }

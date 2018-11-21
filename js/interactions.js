@@ -4,16 +4,16 @@ function findPlayer() {
     let col = parseInt(player.dataset.col);
     return [row, col]
 }
-
+// console.log(game);
 function keyPress(event) {
 
     let player = document.querySelector('.g-bike');
     let playerY = parseInt(parentCol(player));
     let playerX = parseInt(parentRow(player));
-    
+
     if (event.keyCode == '38') {
         // up
-        if(!game.drunkState[0]){
+        if (!game.drunkState[0]) {
             playerMoveUp(playerX, playerY, player);
         } else {
             playerMoveDown(playerX, playerY, player);
@@ -21,7 +21,7 @@ function keyPress(event) {
 
     } else if (event.keyCode == '40') {
         // down
-        if(!game.drunkState[0]){
+        if (!game.drunkState[0]) {
             playerMoveDown(playerX, playerY, player);
         } else {
             playerMoveUp(playerX, playerY, player);
@@ -29,14 +29,14 @@ function keyPress(event) {
     }
 }
 
-function playerMoveUp(x, y, player){
+function playerMoveUp(x, y, player) {
     if (x <= 0) {} else if (x <= game.boardHeight - 1) {
         let field = findField(x - 1, y);
         field.appendChild(player);
     }
 }
 
-function playerMoveDown(x, y, player){
+function playerMoveDown(x, y, player) {
     if (x < game.boardHeight - 1) {
         let field = findField(x + 1, y);
         field.appendChild(player);
@@ -76,51 +76,50 @@ function collisionDetection() {
         let obsticleX = parentRow(x);
         let obsticleY = parentCol(x);
         if (playerX === obsticleX && playerY === obsticleY) {
-            //tutaj funkcja collisionEffect()
-            collisionEffect(x, player);
+            collisionEffect(x, playerX, playerY);
             findField(obsticleX, obsticleY).removeChild(x);
-            
+
         }
     });
 }
 
-function collisionEffect(obsticle, player) {
+function collisionEffect(obsticle, playerX, playerY) {
     let obsticleClass = obsticle.classList[1];
-    if(obsticleClass === game.obsticles.pickupGood.obsticleClass[1]){
+    if (obsticleClass === game.obsticles.pickupGood.obsticleClass[1]) {
         game.points += 1000;
         playAudio('coin', 'wav');
-        console.log('moneyyyyy', game.points);
-    } else if (obsticleClass === game.obsticles.pickupGood.obsticleClass[0]){
-        if(game.lives < 3){
+        placeInfo('points-plus',playerX, playerY);
+    } else if (obsticleClass === game.obsticles.pickupGood.obsticleClass[0]) {
+        if (game.lives < 3) {
             game.lives++;
+            playAudio('1-up', 'wav');
+            placeInfo('heart-plus',playerX, playerY);
         }
-        playAudio('1-up', 'wav');
-        console.log('mushroom', game.lives);
-    } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[0]){
+    } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[0]) {
         game.points -= 1000;
         playAudio('bottle', 'wav');
-        console.log('poison', game.points);
-    } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[1]){
+        placeInfo('points-minus',playerX, playerY);
+    } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[1]) {
         game.drunkState[0] = true;
         game.drunkState[1] = game.turn + 50;
-        player.classList.add('player-alco');
-        console.log('alco', game.drunkState, game.turn);
+        
+        game.board.classList.add('alco-effect');
         playAudio('gulp', 'mp3');
     } else {
         game.lives--;
         playAudio('crash', 'mp3');
+        placeInfo('heart-minus',playerX, playerY);
     }
 }
 
-function alcoEffectReset(){
-    if(game.turn === game.drunkState[1]){
+function alcoEffectReset() {
+    if (game.turn === game.drunkState[1]) {
         game.drunkState[0] = false;
-        let player = document.querySelector('.player');
-        player.classList.remove('player-alco');
+        game.board.classList.remove('alco-effect');
     }
 }
 
-function playAudio(name, format){
+function playAudio(name, format) {
     let audio = new Audio(`../sound/${name}.${format}`);
     audio.play();
 }

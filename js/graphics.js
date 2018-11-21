@@ -20,11 +20,9 @@ function creatRow(rowNumber) {
 }
 //rysowanie całej planszy
 function drawBoard() {
-    var board = document.getElementById("game-holder");
-
     for (var i = 0; i < game.boardHeight; i++) {
         let row = creatRow(i);
-        board.appendChild(row);
+        game.board.appendChild(row);
     }
 }
 // rysownie ilości żyć
@@ -40,7 +38,7 @@ function showLives() {
     }
 }
 // wypisywanie ilości punktów
-function writeScore(){
+function writeScore() {
     const scoreCounter = document.getElementById("g-score");
 
     scoreCounter.innerHTML = game.points;
@@ -53,9 +51,9 @@ function findField(row, col) {
     return field;
 }
 
-function createFigure(animalName, objClass) {
+function createFigure(figureName, objClass) {
     var figure = document.createElement("div");
-    figure.classList.add("g-figure", animalName, objClass);
+    figure.classList.add("g-figure", figureName, objClass);
 
     return figure;
 }
@@ -64,6 +62,9 @@ function placeFigure(figureName, objClass, row, col) {
     let field = findField(row, col);
     let figure = createFigure(figureName, objClass);
     field.appendChild(figure);
+    if(figureName === "1-up"){
+        console.log(figure)
+    }
 }
 
 function removeFigure(className) {
@@ -72,7 +73,7 @@ function removeFigure(className) {
 
 function placePlayer() {
     let playerRow = Math.floor(game.boardHeight / 2);
-    let playerCol = Math.floor(game.boardWidth / 7);
+    let playerCol = Math.floor(game.boardWidth / 5);
     placeFigure("g-bike", 'player', playerRow, playerCol);
 }
 
@@ -84,6 +85,10 @@ function placeObsticle(randomClass) {
     if (!field.hasChildNodes()) { // sprawdzanie czy juz nie ma jakiejś przeszkody w tym polu
         placeFigure(randomClass, 'obsticle', row, col);
     }
+}
+
+function placeInfo(infoType, playerX, playerY) {
+    placeFigure(infoType, 'obsticle', playerX, playerY-1);
 }
 
 function placeAllObsticles(turn) {
