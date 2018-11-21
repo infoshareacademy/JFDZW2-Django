@@ -62,7 +62,7 @@ function placeFigure(figureName, objClass, row, col) {
     let field = findField(row, col);
     let figure = createFigure(figureName, objClass);
     field.appendChild(figure);
-    if(figureName === "1-up"){
+    if (figureName === "1-up") {
         console.log(figure)
     }
 }
@@ -88,7 +88,7 @@ function placeObsticle(randomClass) {
 }
 
 function placeInfo(infoType, playerX, playerY) {
-    placeFigure(infoType, 'obsticle', playerX, playerY-1);
+    placeFigure(infoType, 'obsticle', playerX, playerY - 1);
 }
 
 function placeAllObsticles(turn) {
