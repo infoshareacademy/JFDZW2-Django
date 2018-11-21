@@ -88,27 +88,27 @@ function collisionEffect(obsticle, playerX, playerY) {
     if (obsticleClass === game.obsticles.pickupGood.obsticleClass[1]) {
         game.points += 1000;
         playAudio('coin', 'wav');
-        placeInfo('points-plus',playerX, playerY);
+        placeInfo('points-plus', playerX, playerY);
     } else if (obsticleClass === game.obsticles.pickupGood.obsticleClass[0]) {
         if (game.lives < 3) {
             game.lives++;
             playAudio('1-up', 'wav');
-            placeInfo('heart-plus',playerX, playerY);
+            placeInfo('heart-plus', playerX, playerY);
         }
     } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[0]) {
         game.points -= 1000;
         playAudio('bottle', 'wav');
-        placeInfo('points-minus',playerX, playerY);
+        placeInfo('points-minus', playerX, playerY);
     } else if (obsticleClass === game.obsticles.pickupBad.obsticleClass[1]) {
         game.drunkState[0] = true;
         game.drunkState[1] = game.turn + 50;
-        
+
         game.board.classList.add('alco-effect');
         playAudio('gulp', 'mp3');
     } else {
         game.lives--;
         playAudio('crash', 'mp3');
-        placeInfo('heart-minus',playerX, playerY);
+        placeInfo('heart-minus', playerX, playerY);
     }
 }
 

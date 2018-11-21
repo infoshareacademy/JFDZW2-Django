@@ -1,5 +1,5 @@
 //obiekt globalny z ustawieniami gry
-const game = {
+let game = {
     board: document.getElementById("game-holder"),
     obsticlesArr: document.querySelectorAll('.obsticle'),
     boardHeight: 7,
@@ -10,6 +10,7 @@ const game = {
     levelHard: 1000,
     obsticlePoints: 10,
     pickupPoints: 300,
+    gameInterval: undefined,
     obsticles: {
         tree: {
             obsticleClass: ['g-obsticle__tree--maple', 'g-obsticle__tree--apple', 'g-obsticle__tree--pine', 'g-obsticle__tree--oak'],
@@ -29,4 +30,8 @@ const game = {
     turn: 0,
     points: 0,
     lives: 3
+}
+
+const initialSettings = {
+    ...game
 }
