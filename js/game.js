@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 game.board.classList.remove('alco-effect');
                 placePlayer();
                 game.gameInterval = setInterval(gameLoop, game.defaultSpeed);
-
+                game.drunkState[0] = false;
                 let modal = document.querySelector('.c-modal');
                 modal.style.display = 'none';
             });
