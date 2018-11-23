@@ -31,7 +31,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             // INSERT HALL OF FAME HERE
             insideModal.innerText = `Points: ${game.points}`;
 
-
+            saveScore();
+            showScore();
+           // scoreBord();
+            ReadScores();
 
 
             modal.appendChild(insideModal);
