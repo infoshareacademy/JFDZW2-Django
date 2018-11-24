@@ -24,21 +24,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             let modal = document.querySelector('.c-modal');
             modal.innerHTML = '';
             let insideModal = document.createElement('div');
-            insideModal.classList.add('c-modal-content');
-
-
-
-            // INSERT HALL OF FAME HERE
-            insideModal.innerText = `Points: ${game.points}`;
-
-            saveScore();
-            showScore();
-           // scoreBord();
-            ReadScores();
+            //insideModal.classList.add('c-modal-content');
+            insideModal.classList.add('c-modal-content', 'g-score');
+            insideModal.innerText = 'Congratulations !!!' + ` You have: ${game.points} points`;
 
 
             modal.appendChild(insideModal);
-
             let deeperInsideModal = document.querySelector('.c-modal-content');
             let resetBtn = document.createElement('div');
             resetBtn.classList.add('js-btn--reset', 'c-btn');
@@ -46,10 +37,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             deeperInsideModal.appendChild(resetBtn);
 
             modal.style.display = '';
+            saveScore();
+            //showScore();
             resetButton();
             return;
         } else {
-            
+
             // random obsticle on random row
             placeAllObsticles(game.turn);
         }
