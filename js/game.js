@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             const insideModal = document.createElement('div');
             insideModal.classList.add('c-modal-content', 'g-score');
 
-            const gameEndText = `<h1>Congratulations !!! You have: ${game.points} points</h1>`
+            const gameEndText = `<h1>Congratulations !!! Your score is ${game.points}!</h1>`
             insideModal.insertAdjacentHTML('beforeend', gameEndText);
 
             modal.appendChild(insideModal);
