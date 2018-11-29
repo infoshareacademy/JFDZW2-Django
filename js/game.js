@@ -21,23 +21,64 @@ document.addEventListener("DOMContentLoaded", function (event) {
             clearInterval(game.gameInterval);
             playAudio('game_over', 'wav');
 
-            let modal = document.querySelector('.c-modal');
+            const modal = document.querySelector('.c-modal');
             modal.innerHTML = '';
-            let insideModal = document.createElement('div');
-            //insideModal.classList.add('c-modal-content');
+            const insideModal = document.createElement('div');
             insideModal.classList.add('c-modal-content', 'g-score');
-            insideModal.innerText = 'Congratulations !!!' + ` You have: ${game.points} points`;
 
+
+            const gameEndText = `<h1>Congratulations !!! You have: ${game.points} points</h1>`
+            insideModal.insertAdjacentHTML('beforeend', gameEndText);
 
             modal.appendChild(insideModal);
-            let deeperInsideModal = document.querySelector('.c-modal-content');
+            const deeperInsideModal = document.querySelector('.c-modal-content');
+
+            saveScore(deeperInsideModal, () => {
+                const addScore = document.querySelector('#js-addBtn');
+                addScore.addEventListener('click', () => {
+
+                    const inputValue = document.querySelector('#js-input');
+                    const scoreTable = document.querySelector('#js-score');
+
+                    const playerName = inputValue.value;
+
+                    if(playerName){
+                        const getScore = getItem('results') || [];
+                    getScore.push({
+                        userName: playerName,
+                        userPoints: game.points
+                    })
+                    const scoreSort = getScore.sort((a, b)=>{
+                        return b.userPoints - a.userPoints;
+                    })
+                    if(scoreSort.length > 10){
+                        scoreSort.pop();
+                    }
+                    scoreSort.forEach((elem, i)=>{
+                        const template = `
+                        <h3 class="center">${i+1}.   ${elem.userName} - ${elem.userPoints}</h3>
+                        `
+                        scoreTable.insertAdjacentHTML('beforeend', template);
+                    });
+                    setItem('results', scoreSort)
+
+
+                    removeElem('#js-scoreIpnut')
+                    showScore();
+
+                    }
+                })
+            });
+
+
+
+
             let resetBtn = document.createElement('div');
             resetBtn.classList.add('js-btn--reset', 'c-btn');
             resetBtn.innerText = 'Reset';
             deeperInsideModal.appendChild(resetBtn);
-
             modal.style.display = '';
-            saveScore();
+
             //showScore();
             resetButton();
             return;
@@ -97,7 +138,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
     }
 
-
+    function removeElem(elemId) {
+        var elem = document.querySelector(elemId);
+        elem.parentNode.removeChild(elem);
+    }
 
 
 });

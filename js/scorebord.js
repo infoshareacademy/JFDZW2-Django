@@ -1,42 +1,18 @@
-function saveScore() {
-    let name = prompt("Your Name:", "Yohnyy Boy");
- 
-    const userName = name;
-    let userPoints = game.points;
-    
-    let scoreBoard = JSON.parse(localStorage.getItem('results'));
-    
-    if (scoreBoard === null){
-      localStorage.setItem('results', JSON.stringify([{userName, userPoints}]));
-    }	else {
-    	const currentScore = {
-      	userName, 
-        userPoints
-      }
-    	scoreBoard.push(currentScore);
-      localStorage.setItem('results', JSON.stringify(scoreBoard));
-    }
-    
+function saveScore(divName, callback) {
+		const inputTemplate = `
+		<div id="js-scoreIpnut" class="c-input o-flex">
+      <input id="js-input" placeholder="Enter your name" class="c-input__input c-input__item o-flex__item" type="Yout timer name">
+      <div id="js-addBtn" class="c-input__item c-input__button o-flex__item">Add</div>
+		</div>
+		<div id="js-score"></div>
+		`
+		divName.insertAdjacentHTML('beforeend', inputTemplate);
+		callback();
 }
-//local storage zapis 
-/*
-function saveScore() {
-	let name = prompt("Your Name:", "Yohnyy Boy");
-	const userName = name;
-	let userPoints = game.points;
-	localStorage.getItem('results')
-	localStorage.setItem("results", JSON.stringify([{userName, userPoints}]));
-};
-	*/
+
 
 function showScore() {
 	
-	let modal = document.querySelector('c-modal');
-	modal.innerHTML = '';
-	let insideModal = document.createElement('div');
-	insideModal.classList.add('c-modal-content' , 'c-score');
-	
-	insideModal.innerText ='Congratulations !!! '+ userName +` You have: ${game.points} points`;
 };
 /*
 // odczyt
@@ -58,3 +34,10 @@ function scoreBord() {
 	return;
 };
 */
+function setItem(key, value){
+	localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getItem(key){
+	return JSON.parse(localStorage.getItem(key));
+}
