@@ -33,9 +33,9 @@ function showScore() {
 			if (scoreSort.length > 10) {
 				scoreSort.pop();
 			}
-			scoreSort.forEach((elem, i) => {
+			scoreSort.forEach(({userName, userPoints}, i) => {
 				const template = `
-                        <h3 class="center">${i+1}.   ${elem.userName} - ${elem.userPoints}</h3>
+                        <h3 class="center">${i+1}.   ${userName} - ${userPoints}</h3>
                         `
 				scoreTable.insertAdjacentHTML('beforeend', template);
 			});
