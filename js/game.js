@@ -21,24 +21,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
             clearInterval(game.gameInterval);
             playAudio('game_over', 'wav');
 
-            let modal = document.querySelector('.c-modal');
+            const modal = document.querySelector('.c-modal');
             modal.innerHTML = '';
-            let insideModal = document.createElement('div');
-            //insideModal.classList.add('c-modal-content');
+            const insideModal = document.createElement('div');
             insideModal.classList.add('c-modal-content', 'g-score');
-            insideModal.innerText = 'Congratulations !!!' + ` You have: ${game.points} points`;
 
+            const gameEndText = `<h1>Congratulations !!! Your score is ${game.points}!</h1>`
+            insideModal.insertAdjacentHTML('beforeend', gameEndText);
 
             modal.appendChild(insideModal);
-            let deeperInsideModal = document.querySelector('.c-modal-content');
+            const deeperInsideModal = document.querySelector('.c-modal-content');
+
+            saveScore(deeperInsideModal);
+            showScore();
+
             let resetBtn = document.createElement('div');
             resetBtn.classList.add('js-btn--reset', 'c-btn');
             resetBtn.innerText = 'Reset';
             deeperInsideModal.appendChild(resetBtn);
-
             modal.style.display = '';
-            saveScore();
-            //showScore();
+
             resetButton();
             return;
         } else {
@@ -96,8 +98,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
     }
-
-
-
 
 });

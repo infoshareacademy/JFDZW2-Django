@@ -1,60 +1,61 @@
-function saveScore() {
-    let name = prompt("Your Name:", "Yohnyy Boy");
- 
-    const userName = name;
-    let userPoints = game.points;
-    
-    let scoreBoard = JSON.parse(localStorage.getItem('results'));
-    
-    if (scoreBoard === null){
-      localStorage.setItem('results', JSON.stringify([{userName, userPoints}]));
-    }	else {
-    	const currentScore = {
-      	userName, 
-        userPoints
-      }
-    	scoreBoard.push(currentScore);
-      localStorage.setItem('results', JSON.stringify(scoreBoard));
-    }
-    
+function saveScore(divName) {
+	const inputTemplate = `
+		<div id="js-scoreIpnut" class="c-input o-flex">
+      <input id="js-input" placeholder="Enter your name" class="c-input__input c-input__item o-flex__item" type="Yout timer name">
+      <div id="js-addBtn" class="c-input__item c-input__button o-flex__item">Add</div>
+		</div>
+		<div id="js-score" class="c-score"></div>
+		`
+	divName.insertAdjacentHTML('beforeend', inputTemplate);
+
 }
-//local storage zapis 
-/*
-function saveScore() {
-	let name = prompt("Your Name:", "Yohnyy Boy");
-	const userName = name;
-	let userPoints = game.points;
-	localStorage.getItem('results')
-	localStorage.setItem("results", JSON.stringify([{userName, userPoints}]));
-};
-	*/
+
 
 function showScore() {
-	
-	let modal = document.querySelector('c-modal');
-	modal.innerHTML = '';
-	let insideModal = document.createElement('div');
-	insideModal.classList.add('c-modal-content' , 'c-score');
-	
-	insideModal.innerText ='Congratulations !!! '+ userName +` You have: ${game.points} points`;
+	const addScore = document.querySelector('#js-addBtn');
+	addScore.addEventListener('click', () => {
+
+		const inputValue = document.querySelector('#js-input');
+		const scoreTable = document.querySelector('#js-score');
+
+		const playerName = inputValue.value;
+
+		if (playerName) {
+			const getScore = getItem('results') || [];
+			getScore.push({
+				userName: playerName,
+				userPoints: game.points
+			});
+			const scoreSort = getScore.sort((a, b) => {
+				return b.userPoints - a.userPoints;
+			});
+
+			if (scoreSort.length > 10) {
+				scoreSort.pop();
+			}
+			scoreSort.forEach(({userName, userPoints}, i) => {
+				const template = `
+                        <h3 class="center">${i+1}.   ${userName} - ${userPoints}</h3>
+                        `
+				scoreTable.insertAdjacentHTML('beforeend', template);
+			});
+
+			setItem('results', scoreSort);
+
+			removeElem('#js-scoreIpnut');
+		}
+	})
 };
-/*
-// odczyt
-function ReadScores() {
-	localStorage.getItem(game.points);
-	return;
+
+function setItem(key, value) {
+	localStorage.setItem(key, JSON.stringify(value));
 }
 
+function getItem(key) {
+	return JSON.parse(localStorage.getItem(key));
+}
 
-function scoreBord() {
-	//let userName = document.createElement('div');
-
-	//userName.innerHTML = name;
-	let modal = document.querySelector('.c-modal');
-	modal.innerHTML = '';
-
-	let insideModal = document.createElement('div');
-	insideModal.innerHTML = userName + ` Your score: ${game.points}`;
-	return;
-};
-*/
+function removeElem(elemId) {
+	var elem = document.querySelector(elemId);
+	elem.parentNode.removeChild(elem);
+}
